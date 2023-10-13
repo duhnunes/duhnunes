@@ -1,23 +1,23 @@
 <div align="center">
+<picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
+        <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+        <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png" width="40em" wspace="10">
+    </picture>
     <a href="#" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="duhLinkedin" hspace="10">
     </a>
 </div>
 <br>
-<div align="left" style="display:flex;">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
-        <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
-        <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png" width="40em" wspace="10">
-    </picture>
-    <p>DuH Nunes</p>
+<div align="center">
+    
 </div>
 
-# <p align="center"> DuH Nunes</p>
-Olá, me chamo DuH Nunes, comecei minha jorganada de criar sites em 2007, mas não era o foco principal da minha vida até final de 2022, quando resolvi estudar a fundo e me tornar desenvolvedor FrontEnd. Criei alguns sites ao decorrer desses anos, usando html/css/bootstrap. Apesar de não ter sido o foco na minha vida, o desenvolvimento web sempre esteve presente no meu dia a dia, em leituras, desenvolvimento exporadicamente de algum site e conversas com meu irmão que é desenvolvedor backend.
+# Sobre mim
+Olá, sou o DuH Nunes. Minha jornada na criação de sites começou em 2007, mas o desenvolvimento frontend não era o principal foco na minha vida. A influência do meu irmão, que é desenvolvedor backend, me manteve conectado a esse mundo. Ao longo dos anos, criei alguns sites, utilizando tecnologias como HTML, CSS e Bootstrap. No final de 2022, resolvi retomar os estudos e me aprofundar mais nessa área.
 
 
-## <p align="center">Languages I Know</p>
+## Linguagens
 
 <p alig="left">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="Html" width="32" height="32" align="center">
