@@ -14,15 +14,16 @@
 
 # <p align="center"> DuH Nunes</p>
 
-Olá, me chamo DuH Nunes, comecei minha jorganada de criar sites em 2007, mas nunca levei a sério até 2022, quando resolvi estudar a fundo e me tornar Desenvolvedor Front End.
+Olá, me chamo DuH Nunes, comecei minha jorganada de criar sites em 2007, mas não era o foco principal da minha vida até final de 2022, quando resolvi estudar a fundo e me tornar desenvolvedor FrontEnd. Criei alguns sites ao decorrer desses anos, usando html/css/bootstrap. Apesar de não ter sido o foco na minha vida, o desenvolvimento web sempre esteve presente no meu dia a dia, em leituras e conversas com meu irmão que é desenvolvedor backend.
 
 
-## <p align="center">Languages I Use</p>
+## <p align="center">Languages I Know</p>
 
 <p alig="left">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="Html" width="32" height="32" align="center">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="Css" width="32" height="32" align="center">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32" align="center">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="32" height="32" align="center">
 </p>
 
 
