@@ -19,12 +19,7 @@ Olá, sou o DuH Nunes. Minha jornada na criação de sites começou em 2007, mas
 
 ## Linguagens
 
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="Html" width="32" height="32" align="center"> ![](https://geps.dev/progress/32?dangerColor=800000&warningColor=ff9900&successColor=006600)
-
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="Css" width="32" height="32" align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="32" height="32" align="center">
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32" align="center">
-</p>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="Html" width="32" height="32" align="center"> ![](https://geps.dev/progress/85?dangerColor=800000&warningColor=ff9900&successColor=006600) <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="Css" width="32" height="32" align="center"> ![](https://geps.dev/progress/55?dangerColor-800000&warningColor=ff9900&successColor=006600) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="32" height="32" align="center"> ![](https://geps.dev/progress/60?dangerColor-800000&warningColor=ff9900&successColor=006600) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32" align="center"> ![](https://geps.dev/progress/15?dangerColor-800000&warningColor=ff9900&successColor=006600)
 
 
 ## <p align="center"> Some works</p>
