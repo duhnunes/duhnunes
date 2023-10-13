@@ -15,9 +15,9 @@
 Olá, sou o DuH Nunes. Minha jornada na criação de sites começou em 2007, mas o desenvolvimento frontend não era o principal foco na minha vida. A influência do meu irmão, que é desenvolvedor backend, me manteve conectado a esse mundo. Ao longo dos anos, criei alguns sites, utilizando tecnologias como HTML, CSS e Bootstrap. No final de 2022, resolvi retomar os estudos e focar mais nessa área.
 
 
-## Linguagens
+## Linguagens utilizadas
 
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="Html" width="32" height="32" align="center" hspace="10"> ![](https://geps.dev/progress/85?dangerColor=800000&warningColor=ff9900&successColor=006600) <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="Css" width="32" height="32" align="center" hspace="10"> ![](https://geps.dev/progress/55?dangerColor-800000&warningColor=ff9900&successColor=006600) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="32" height="32" align="center" hspace="10"> ![](https://geps.dev/progress/60?dangerColor-800000&warningColor=ff9900&successColor=006600) <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32" align="center" hspace="10"> ![](https://geps.dev/progress/15?dangerColor-800000&warningColor=ff9900&successColor=006600)
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="Html" width="32" height="32" align="center" hspace="10"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="Css" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32" align="center" hspace="10">
 
 ## Alguns sites
 Alguns sites que eu criei e ainda tenho guardado comigo.
