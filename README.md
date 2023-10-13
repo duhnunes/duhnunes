@@ -4,7 +4,7 @@
         <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
         <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png" width="40em" wspace="10">
     </picture>
-    <a href="#" target="_blank">
+    <a href="https://www.linkedin.com/in/duh-nunes/" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="duhLinkedin" hspace="10">
     </a>
 </div>
