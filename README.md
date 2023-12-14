@@ -12,10 +12,23 @@
 
 
 # Sobre mim
-Olá, meu nome é DuH Nunes e comecei minha jornada de FrondEnd com o blogspot em 2007. Desde lá criei alguns sites pessoais e vi algumas gerações, como sites em tabelas e sites feito em imagens. Em 2018 eu conheci o bootstrap e criei alguns sites com ele incluindo a primeira versão do meu portfolio como uma ShowCase em 2019. No final de 2022 eu resolvi focar de vez no FrontEnd e transformar essa minha paixão em carreira.
+Minha entrada nessa jornada de FrontEnd começou lá atrás em 2007 com o antigo BlogSpot. Nele eu aprendi que era possível customizar um site de várias formas.
+
+Eu gostei do que eu estava fazendo com os blogs e comecei a pesquisar como fazer um do zero, descobrindo o DreamWaver, que possibilitava construir um site e visualizar como ele estava ficando em tempo real. Os anos se passaram e eu fiz alguns sites, mas houve um grande hiato por volta de 2009 até 2016.
+
+Em 2018, 2019 e 2021 fiz alguns sites utilizando BootStrap. No final de 2022 eu resolvi focar, estudar e me dedicar em tempo integral a essa minha paixão e transformá-la em uma carreira. Hoje busco me aperfeiçoar em HTML, CSS e REACT, para alcançar um design moderno e rápido com a nova tecnologia.
+
 
 ## Linguagens já utilizadas
 
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="Html" width="32" height="32" align="center" hspace="10"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="Css" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="GIT" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/less/less-plain-wordmark.svg" alt="less" width="32" height="32" align="center" hspace="10"> 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="Html" width="32" height="32" align="center" hspace="10"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="Css" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SASS" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/less/less-plain-wordmark.svg" alt="less" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="GIT" width="32" height="32" align="center" hspace="10"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="32" height="32" align="center" hspace="10">
 
-[DuH Nunes Portfolio](https://duhnunes.github.io/)
+## Alguns sites
+Alguns sites que eu criei e ainda tenho guardado comigo.
+
+
+| Date | Tecnology | Site |
+| :--- | :-------: | :--- |
+| 2023 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html logo" width="20em" align="center"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/less/less-plain-wordmark.svg" alt="Less logo" width="20em" align="center"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="angular logo" width="20em" align="center"> | [Showcase](https://duhnunes.github.io)
+| 2021 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html logo" width="20em" align="center"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="bootstrap logo" width="20em" align="center"> | [Showcase](https://duhnunes.github.io/site/duhshowcase/100/) |
+| 2019 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html logo" width="20em" align="center"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="bootstrap logo" width="20em" align="center"> | [dhtextures](https://duhnunes.github.io/site/minecraft/textures/) |
