@@ -5,8 +5,7 @@ FrontEnd Developer
 ------------------
 
 Minha entrada nessa jornada de FrontEnd começou lá atrás em 2007 com o antigo BlogSpot. Nele eu aprendi o básico de customização e criação de sites.  
-
-Eu gostei do que eu estava fazendo com os blogs e resolvi me aprofundar com DreamWeaver, assim aprendendo a construir a estrutura básica dos sites, com pastas e arquivos organizados e separados e construindo alguns sites simples até 2009.  
+Eu gostei do que eu estava fazendo com os blogs e resolvi me aprofundar com DreamWeaver, assim aprendendo a construir a estrutura básica dos sites, com pastas e arquivos organizados e separados e construindo alguns sites simples até meados de 2009.  
 
 Em 2017 eu conheci o BootStrap e fiz alguns sites. Mas só no final de 2022 foi que eu resolvi focar de vez nos estudos e me dedicar em tempo a essa minha paixão e transformá-la em uma carreira. Hoje busco me aperfeiçoar com foco em REACT e TYPESCRIPT, para alcançar um design moderno, rápido e responsivo.
 
