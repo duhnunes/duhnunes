@@ -6,13 +6,13 @@
 4. Rename `.eslintrc.cjs` to `.eslintrc`
    4.1 copy all [ESLint Config](./eslint.txt) and paste inside
 5. Create file `.eslintignore` and put inside:
-  > node_modules/  
-  > dist/  
-  > env.d.ts
+   > node_modules/  
+   > dist/  
+   > env.d.ts
 6. Create file `.prettierrc` and paste all content from [prettierrclib](./prettier.txt)
 7. Create file `.prettierignore` and put inside:
-  > node_modules/  
-  > dist/
+   > node_modules/  
+   > dist/
 8. Install VSCode Extensions:  
-  8.1 [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)  
-  8.2 [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+   8.1 [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)  
+   8.2 [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
