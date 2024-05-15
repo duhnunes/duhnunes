@@ -4,7 +4,11 @@ Hi 👋 My name is DuH Nunes
 Fullstack Developer
 -------------------
 
-Minha entrada nessa jornada de FrontEnd começou lá atrás em 2007 com o antigo BlogSpot. Nele eu aprendi o básico de customização e criação de sites. Logo depois eu comecei com DreamWeaver, assim aprendendo a construir a estrutura básica dos sites, com pastas e arquivos organizados e separados e construindo alguns sites simples até meados de 2009. Em 2017 eu conheci o BootStrap e fiz alguns sites. Mas só no final de 2022 foi que eu resolvi focar de vez nos estudos e me dedicar a essa paixão e transformá-la em uma carreira. Hoje busco me aperfeiçoar com foco em REACT e TYPESCRIPT, para alcançar um design moderno, rápido e responsivo.
+Minha entrada nessa jornada de FrontEnd começou lá atrás em 2007 com o antigo BlogSpot. Nele eu aprendi o básico de customização e criação de sites. 
+
+Logo depois eu comecei com DreamWeaver, assim aprendendo a construir a estrutura básica dos sites, com pastas e arquivos organizados e separados e construindo alguns sites simples até meados de 2009. 
+
+Em 2017 eu conheci o BootStrap e fiz alguns sites. Mas só no final de 2022 foi que eu resolvi focar de vez nos estudos e me dedicar a essa paixão e transformá-la em uma carreira. Hoje busco me aperfeiçoar com foco em REACT e TYPESCRIPT, para alcançar um design moderno, rápido e responsivo.  
 
 * 🌍  I'm based in Brasil
 * 🖥️  See my portfolio at [DuH Nunes](http://duhnunes.github.io/)
