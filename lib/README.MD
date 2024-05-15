@@ -1,3 +1,7 @@
+# HOW TO USE
+
+1. After create your project, go to `.eslintrc.cjs` (or other name file from eslint) and paste only de rules inside the files.
+
 # OPTIONAL USES TO DEPLOY
 
 #### _To use gh-pages:_
