@@ -10,12 +10,11 @@ Fullstack Developer
 -------------------
 
 Me apaixonei pelo ReactJS assim que eu o vi pela primeira vez  
-e, fui gostando cada vez mais com o passar do tempo.
+e fui gostando cada vez mais a cada projeto criado.
 
 Procurando sempre me aprofundar nessa ferramenta para ser um desenvolvedor completo.
 
-- Heineken Lover
-- Steam Lover
-- Gabe Newell Lover
-- Windows Lover
-- Samsung Lover
+- NextJS
+- Tailwind
+- Shadcn-Ui
+- React-query
