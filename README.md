@@ -10,7 +10,8 @@ Fullstack Developer
 -------------------
 
 Gosto muito de passar horas e horas criando interfaces reativas, tirando do papel projetos e tornando-os realidade.  
-Me apaixonei pelo ReactJS quando vi como ele consegue fazer aplicações verdadeiramente rápidas.
+Me apaixonei pelo ReactJS assim que eu o vi pela primeira vez.  
+E fui gostando cada vez mais a cada momento em que eu aprendia alguma coisa nova.
 
 Estudo para me aprofundar em NextJS com Tailwind que pode me proporcionar o React ligado a ao Backend feito em NodeJS, para criar aplicações inteiramente funcionais.
 
