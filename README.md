@@ -1,6 +1,6 @@
 <img align="right" src="img\undraw_programming.svg" width="300" />
 
-## Hi 👋 My name is DuH Nunes
+# Hi 👋 My name is DuH Nunes
 
 [![Email Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:duhnunes.dev@gmail.com)
 [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/duhnunes/)
@@ -9,10 +9,10 @@
 Fullstack Developer
 -------------------
 
-Me apaixonei pelo ReactJS assim que eu o vi pela primeira vez.  
-E fui gostando cada vez mais com o passar do tempo.
+Me apaixonei pelo ReactJS assim que eu o vi pela primeira vez  
+e, fui gostando cada vez mais com o passar do tempo.
 
-Procurando sempre me aprofundar nessa ferramenta cada vez mais.
+Procurando sempre me aprofundar nessa ferramenta para ser um desenvolvedor completo.
 
 - Heineken Lover
 - Steam Lover
