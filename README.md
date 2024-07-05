@@ -9,9 +9,13 @@
 Fullstack Developer
 -------------------
 
-Gosto muito de passar horas e horas criando interfaces reativas, tirando do papel projetos e tornando-os realidade.  
 Me apaixonei pelo ReactJS assim que eu o vi pela primeira vez.  
-E fui gostando cada vez mais a cada momento em que eu aprendia alguma coisa nova.
+E fui gostando cada vez mais com o passar do tempo.
 
-Estudo para me aprofundar em NextJS com Tailwind que pode me proporcionar o React ligado a ao Backend feito em NodeJS, para criar aplicações inteiramente funcionais.
+Procurando sempre me aprofundar nessa ferramenta cada vez mais.
 
+- Heineken Lover
+- Steam Lover
+- Gabe Newell Lover
+- Windows Lover
+- Samsung Lover
