@@ -10,8 +10,8 @@
 Fullstack Developer
 -------------------
 
-Me apaixonei pelo ReactJS assim que eu o vi pela primeira vez  
-e fui gostando cada vez mais a cada projeto criado.
+Me interessei pelo ReactJS assim que eu o vi pela primeira vez e  
+fui gostando cada vez mais a cada projeto criado.
 
 Procurando sempre me aprofundar nessa ferramenta para ser um desenvolvedor completo.
 
