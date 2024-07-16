@@ -2,7 +2,7 @@
   // Theme
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "symbols",
-    // "workbench.productIconTheme": "fluent-icons",
+    "workbench.productIconTheme": "fluent-icons",
   //
   
   // =========== GLOBAL SETUP CFG ===========
