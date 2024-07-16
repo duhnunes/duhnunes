@@ -1,18 +1,152 @@
 {
-  // To break line
-  "files.eol": "\n",
-  // To space when click TAB key
-  "editor.tabSize": 2,
-  // To apply changes and rules when saving the file
-  "editor.codeActionsOnSave":{
-    "source.fixAll.eslint": "explicit",
-  },
-  // To wrap line
-  "editor.wordWrap": "on",
-  // To smoothScrolling
-  "terminal.integrated.smoothScrolling": true,
-  "workbench.list.smoothScrolling": true,
-  "editor.smoothScrolling": true,
-  // To show all folders and files
-  "explorer.compactFolders": false,
+  // Theme
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "symbols",
+    // "workbench.productIconTheme": "fluent-icons",
+  //
+  
+  // =========== GLOBAL SETUP CFG ===========
+    "update.mode": "default",
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.showExitAlert": false,
+    "editor.accessibilitySupport": "off",
+    "terminal.integrated.gpuAcceleration": "on",
+
+    // To smoothScrolling
+    "terminal.integrated.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "editor.smoothScrolling": true,
+    // Files Associations
+    "files.associations": {
+      ".env.*": "dotenv",
+      "*.css": "css",
+    },
+
+    // TO VISUALS VSCODE
+      "editor.unicodeHighlight.nonBasicASCII": false,
+      "editor.parameterHints.enabled": false,
+      "editor.renderLineHighlight": "all",
+      "editor.minimap.enabled": false,
+      "explorer.compactFolders": false,
+      "breadcrumbs.enabled": false,
+      "window.commandCenter": false,
+      "workbench.layoutControl.enabled": false,
+      "symbols.hidesExplorerArrows": false,
+      "window.titleBarStyle": "custom",
+      "window.menuBarVisibility": "toggle",
+      "editor.scrollbar.vertical": "visible",
+      "explorer.sortOrder": "foldersNestsFiles",
+      "workbench.statusBar.visible": false,
+      
+      "workbench.activityBar.location": "top",
+      // "apc.activityBar": {
+      //   "position": "bottom",
+      //   "hideSettings": true,
+      //   "size": 68,
+      //   "itemMargin": 6,
+      //   "itemSize": 32
+      // },
+      // "apc.electron": {
+      //   "titleBarStyle": "hiddenInset",
+      //   "trafficLightPosition": {
+      //     "x": 11,
+      //     "y": 10
+      //   },
+      //   "opacity": 1,
+      //   "vibrancy": "dark",
+      //   "frame": false
+      // },
+
+      "explorer.fileNesting.enabled": true,
+      "explorer.fileNesting.patterns": {
+        "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*",
+        "tailwind.config.*": "tailwind.config*, postcss.config*",
+        ".env.local": ".env*",
+        ".env": ".env*"
+      },
+    //
+
+    
+
+    // TO AUTOMATE VSCODE
+      "typescript.updateImportsOnFileMove.enabled": "always",
+      "javascript.updateImportsOnFileMove.enabled": "always",
+      "editor.tabCompletion": "on",
+      // "javascript.suggest.autoImports": true,
+      // "typescript.suggest.autoImports": true,
+      "files.eol": "\n",
+      "editor.tabSize": 2,
+      "editor.wordWrap": "on",
+      "editor.suggestSelection": "first",
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        // "source.addMissingImports": "always"
+      },
+
+      "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+      },
+      "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+      },
+      // To define line limits to code
+      "editor.rulers": [
+        80,
+        120
+      ],
+    //
+
+    
+
+  //
+
+  // =========== EXTENSIONS SETUP CFG ===========
+    "extensions.ignoreRecommendations": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    
+    // PRISMA STUDIO
+      "prisma.showPrismaDataPlatformNotification": false,
+      "[prisma]": {
+        "editor.formatOnSave": true
+      },
+    //
+
+    // INTELLISENSE SETUP CFG
+      "tailwindCSS.experimental.classRegex": [
+        // [
+        //   "([\"'`][^\"'`]*.*?[\"'`])",
+        //   "[\"'`]([^\"'`]*).*?[\"'`]"
+        // ],
+        ["tv\\(([^)]*)\\)", "\"'`.*?[\"'`]"],
+        "class:\\s*?[\"'`]([^\"'`]*).*?,"
+      ],
+    //
+
+    // DICTIONARY
+      "cSpell.language": "en,pt",
+      "cSpell.ignoreWords": [
+        "Searchbar",
+        "btns"
+      ],
+      "cSpell.userWords": [
+        "brasileiro",
+        "Catppuccin",
+        "fadein"
+      ],
+      "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+          "name": "custom-dictionary-user",
+          "path": "~/.cspell/custom-dictionary-user.txt",
+          "addWords": true,
+          "scope": "user"
+        }
+      },
+    //
+    
+  //
+
 }
