@@ -2,7 +2,7 @@
   // Theme
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "symbols",
-    "workbench.productIconTheme": "fluent-icons",
+    // "workbench.productIconTheme": "fluent-icons",
   //
   
   // =========== GLOBAL SETUP CFG ===========
@@ -105,8 +105,6 @@
 
   // =========== EXTENSIONS SETUP CFG ===========
     "extensions.ignoreRecommendations": true,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.donotVerifyTags": true,
     
     // PRISMA STUDIO
       "prisma.showPrismaDataPlatformNotification": false,
