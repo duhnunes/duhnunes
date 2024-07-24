@@ -11,9 +11,9 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "terminal.integrated.showExitAlert": false,
     "editor.accessibilitySupport": "off",
     "terminal.integrated.gpuAcceleration": "on",
+    "terminal.integrated.showExitAlert": false,
 
     // To smoothScrolling
     "terminal.integrated.smoothScrolling": true,
@@ -40,30 +40,16 @@
       "editor.scrollbar.vertical": "visible",
       "explorer.sortOrder": "foldersNestsFiles",
       "workbench.statusBar.visible": false,
+
+      
       
       "workbench.activityBar.location": "top",
-      // "apc.activityBar": {
-      //   "position": "bottom",
-      //   "hideSettings": true,
-      //   "size": 68,
-      //   "itemMargin": 6,
-      //   "itemSize": 32
-      // },
-      // "apc.electron": {
-      //   "titleBarStyle": "hiddenInset",
-      //   "trafficLightPosition": {
-      //     "x": 11,
-      //     "y": 10
-      //   },
-      //   "opacity": 1,
-      //   "vibrancy": "dark",
-      //   "frame": false
-      // },
+      
 
       "explorer.fileNesting.enabled": true,
       "explorer.fileNesting.patterns": {
         "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*",
-        "tailwind.config.*": "tailwind.config*, postcss.config*",
+        "tailwind.config.*": "tailwind.config*, postcss.config*, .prettierrc*",
         ".env.local": ".env*",
         ".env": ".env*"
       },
@@ -105,26 +91,106 @@
 
   // =========== EXTENSIONS SETUP CFG ===========
     "extensions.ignoreRecommendations": true,
+
+    // EXTENSION TO VISUAL
+      // Colorize By YuTengjing
+        "colorize.enable_search_variables": true,
+        "colorize.hide_current_line_decorations": false,
+        "colorize.languages": [
+          "javascript",
+          "typescript",
+          "tailwindcss",
+          "jsx",
+          "tsx",
+          "json",
+        ],
+        "colorize.include": [
+          "**/*.css",
+          "**/*.scss",
+          "**/*.sass",
+          "**/*.less",
+          "**/*.styl",
+          "**/*.ts",
+          "**/*.tsx",
+          "**/*.json",
+        ],
+        "colorize.exclude":[
+          "**/.git",
+          "**/.svn",
+          "**/.hg",
+          "**/CVS",
+          "**/.DS_Store",
+          "**/node_modules",
+          "**/bower_components",
+          "**/tmp",
+          "**/dist",
+          "**/tests"
+        ],
+        "colorize.colorized_colors": [
+          "BROWSERS_COLORS",
+          "HEXA",
+          "RGB",
+          "HSL"
+        ],
+      //
+
+      // Apc Customize UI++
+        // "apc.font.family": "Roboto Mono",
+        "apc.menubar.compact": false,
+        "apc.electron": {
+          "titleBarStyle": "hidden",
+          // "trafficLightPosition": {
+          //   "x": 11,
+          //   "y": 10
+          // },
+          "titleBarOverlay": {
+            "color": "#2f3241",
+            "symbolColor": "#74b1be",
+            "height": 60
+          }
+        },
+        "apc.stylesheet": {
+          ".title": "flex-direction: column; align-items: center",
+          ".part > .title > .title-label": "height: 0; padding-left:0px!important",
+          ".title-label > h2": "display: none",
+          ".title > .title-actions": " width: 100%; padding-left: 0!important",
+          ".title > .title-actions ul": "justify-content: space-between!important",
+        },
+        "apc.listRow": {
+          "height": 24,
+        },
+        "apc.activityBar": {
+          "size": 68,
+          "itemMargin": 6,
+          "itemSize": 52
+        },
+        "apc.sidebar.titlebar": {
+          "height": 36,
+          "fontSize": 13,
+        },
+      //
+
+    //
     
-    // PRISMA STUDIO
+    // PRISMA STUDIO - Prisma By Prisma prisma.io
       "prisma.showPrismaDataPlatformNotification": false,
       "[prisma]": {
         "editor.formatOnSave": true
       },
     //
 
-    // INTELLISENSE SETUP CFG
+    // Tailwind CSS IntelliSense By Tailwind Labs tailwindcss.com
       "tailwindCSS.experimental.classRegex": [
-        // [
-        //   "([\"'`][^\"'`]*.*?[\"'`])",
-        //   "[\"'`]([^\"'`]*).*?[\"'`]"
-        // ],
-        ["tv\\(([^)]*)\\)", "\"'`.*?[\"'`]"],
+        [
+          "([\"'`][^\"'`]*.*?[\"'`])",
+          "[\"'`]([^\"'`]*).*?[\"'`]"
+        ],
+        // ["tv\\(([^)]*)\\)", "\"'`.*?[\"'`]"],
         "class:\\s*?[\"'`]([^\"'`]*).*?,"
       ],
     //
 
-    // DICTIONARY
+    // DICTIONARY (Code Spell Checker By Street Side Software streetsidesoftware.com)
       "cSpell.language": "en,pt",
       "cSpell.ignoreWords": [
         "Searchbar",
