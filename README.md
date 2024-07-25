@@ -7,16 +7,13 @@
 [![Portfolio Badge](https://img.shields.io/badge/Portfolio-c992d2?style=for-the-badge&logo=github&logoColor=white)](https://duhnunes.github.io)
 [![Rocketseat Badge](https://img.shields.io/badge/Rocketseat-9956f6?style=for-the-badge&logo=rocket&logoColor=white)](https://app.rocketseat.com.br/me/duhnunes)
 
-Fullstack Developer
+Frontend Developer
 -------------------
 
-Me interessei pelo ReactJS assim que eu o vi pela primeira vez e  
-fui gostando cada vez mais a cada projeto criado.
+HTML | CSS | TailwindCSS | ReactJS | Typescript | NextJS | Radix-ui
 
-Procurando sempre me aprofundar nessa ferramenta para ser um desenvolvedor completo.
+Um cara simples que gosta criar layouts de FrontEnd e possui um desejo intenso de desenvolver projetos totalmente funcionais e autônomos.
 
-- NextJS
-- Tailwind
-- Shadcn-Ui
-- React-query
-- Prisma
+Fiquei fascinado pelo ReactJS desde o primeiro contato e minha admiração só cresceu com cada projeto desenvolvido, novos aprendizados e bibliotecas utilizadas; ele realmente parece mágico com todas as possibilidades que oferece. O NextJS também é impressionante, com suas inovações e aprimoramentos do ReactJS. Essas ferramentas me intrigam e me motivam a querer aprender e criar mais.
+
+
