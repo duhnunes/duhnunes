@@ -47,6 +47,7 @@
       
 
       "explorer.fileNesting.enabled": true,
+      "explorer.fileNesting.expand": false,
       "explorer.fileNesting.patterns": {
         "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*",
         "tailwind.config.*": "tailwind.config*, postcss.config*, .prettierrc*",
@@ -85,8 +86,6 @@
       ],
     //
 
-    
-
   //
 
   // =========== EXTENSIONS SETUP CFG ===========
@@ -96,6 +95,7 @@
       // Colorize By YuTengjing
         "colorize.enable_search_variables": true,
         "colorize.hide_current_line_decorations": false,
+        "colorize.decoration_type": "background",
         "colorize.languages": [
           "javascript",
           "typescript",
@@ -185,7 +185,7 @@
           "([\"'`][^\"'`]*.*?[\"'`])",
           "[\"'`]([^\"'`]*).*?[\"'`]"
         ],
-        // ["tv\\(([^)]*)\\)", "\"'`.*?[\"'`]"],
+        ["tv\\(([^)]*)\\)", "\"'`.*?[\"'`]"],
         "class:\\s*?[\"'`]([^\"'`]*).*?,"
       ],
     //
