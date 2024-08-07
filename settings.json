@@ -38,14 +38,13 @@
       "window.titleBarStyle": "custom",
       "window.menuBarVisibility": "toggle",
       "editor.scrollbar.vertical": "visible",
-      "explorer.sortOrder": "foldersNestsFiles",
       "workbench.statusBar.visible": false,
-
+      "explorer.sortOrder": "foldersNestsFiles",
       
       
       "workbench.activityBar.location": "top",
       
-
+      
       "explorer.fileNesting.enabled": true,
       "explorer.fileNesting.expand": false,
       "explorer.fileNesting.patterns": {
@@ -179,6 +178,10 @@
       },
     //
 
+    // MDX IntelliSense by unified unifiedjs.com
+      "mdx.server.enable": true,
+    //
+
     // Tailwind CSS IntelliSense By Tailwind Labs tailwindcss.com
       "tailwindCSS.experimental.classRegex": [
         [
@@ -199,7 +202,8 @@
       "cSpell.userWords": [
         "brasileiro",
         "Catppuccin",
-        "fadein"
+        "fadein",
+        "uuidv"
       ],
       "cSpell.customDictionaries": {
         "custom-dictionary-user": {
