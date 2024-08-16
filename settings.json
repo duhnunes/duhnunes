@@ -31,7 +31,6 @@
       "editor.renderLineHighlight": "all",
       "editor.minimap.enabled": false,
       "explorer.compactFolders": false,
-      "breadcrumbs.enabled": false,
       "window.commandCenter": false,
       "workbench.layoutControl.enabled": false,
       "symbols.hidesExplorerArrows": false,
@@ -48,7 +47,7 @@
       "explorer.fileNesting.enabled": true,
       "explorer.fileNesting.expand": false,
       "explorer.fileNesting.patterns": {
-        "package.json": ".eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*",
+        "package.json": ".eslint*, eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*,",
         "tailwind.config.*": "tailwind.config*, postcss.config*, .prettierrc*",
         ".env.local": ".env*",
         ".env": ".env*"
@@ -203,6 +202,7 @@
         "brasileiro",
         "Catppuccin",
         "fadein",
+        "rocketseat",
         "uuidv"
       ],
       "cSpell.customDictionaries": {
