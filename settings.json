@@ -50,7 +50,8 @@
         "package.json": ".eslint*, eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*,",
         "tailwind.config.*": "tailwind.config*, postcss.config*, .prettierrc*",
         ".env.local": ".env*",
-        ".env": ".env*"
+        ".env": ".env*",
+        "index.mjs": "index.d.mts"
       },
     //
 
@@ -203,6 +204,9 @@
         "Catppuccin",
         "fadein",
         "rocketseat",
+        "sufix",
+        "tailwindcss",
+        "theming",
         "uuidv"
       ],
       "cSpell.customDictionaries": {
