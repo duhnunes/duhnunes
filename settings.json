@@ -14,6 +14,29 @@
     "editor.accessibilitySupport": "off",
     "terminal.integrated.gpuAcceleration": "on",
     "terminal.integrated.showExitAlert": false,
+    "terminal.integrated.defaultProfile.windows": "PowerShell 7",
+    "terminal.integrated.profiles.windows": {
+      "Command Prompt": {
+        "args": [],
+        "icon": "terminal-cmd",
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ]
+      },
+      "Git Bash": {
+        "source": "Git Bash"
+      },
+      "PowerShell": {
+        "icon": "terminal-powershell",
+        "source": "PowerShell"
+      },
+      "PowerShell 7": {
+        "args": [],
+        "icon": "terminal-powershell",
+        "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+      }
+    },
 
     // To smoothScrolling
     "terminal.integrated.smoothScrolling": true,
@@ -39,7 +62,7 @@
       "editor.scrollbar.vertical": "visible",
       "workbench.statusBar.visible": false,
       "explorer.sortOrder": "foldersNestsFiles",
-      
+
       
       "workbench.activityBar.location": "top",
       
@@ -73,10 +96,10 @@
       },
 
       "emmet.includeLanguages": {
-      "javascript": "javascriptreact"
+      "javascript": "javascriptreact",
       },
       "emmet.syntaxProfiles": {
-        "javascript": "jsx"
+        "javascript": "jsx",
       },
       // To define line limits to code
       "editor.rulers": [
@@ -202,7 +225,10 @@
       "cSpell.userWords": [
         "brasileiro",
         "Catppuccin",
+        "dayjs",
         "fadein",
+        "fastify",
+        "postgresql",
         "rocketseat",
         "sufix",
         "tailwindcss",
