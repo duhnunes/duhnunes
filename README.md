@@ -10,11 +10,11 @@
 Frontend Developer
 -------------------
 
-HTML | CSS | TailwindCSS | ReactJS | Typescript | NextJS | Radix-ui
+Sou um cara simples que gosta de criar layouts de FrontEnd e estou em constante evolução para me tornar um Dev Fullstack através de boas práticas para ter um código mais organizado, bonito e mais seguro.
 
-Um cara simples que gosta criar layouts de FrontEnd e possui um desejo intenso de desenvolver projetos totalmente funcionais e autônomos.
+Fiquei fascinado pelo ReactJS desde o primeiro contato e minha admiração só cresceu com cada projeto desenvolvido, novos aprendizados e bibliotecas utilizadas; ele realmente parece mágico com todas as possibilidades que oferece. Conhecer e começar a utilizar o NextJS foi também algo impressionante, é como colocar turbo em um carro, potencializa o que já é bom e deixa ainda melhor.
 
-Fiquei fascinado pelo ReactJS desde o primeiro contato e minha admiração só cresceu com cada projeto desenvolvido, novos aprendizados e bibliotecas utilizadas; ele realmente parece mágico com todas as possibilidades que oferece.
-Conhecer e começar a utilizar o NextJS foi também algo impressionante, é como colocar turbo em um carro, potencializa o que já é bom e deixa melhor ainda.
-
-É graças a essas ferramentas que eu me dedico todos os dias para aprender cada vez mais.
+Principais habilidades:
+- Frontend: HTML, CSS, ReactJS, NextJS, ReactJS, Typescript, TailwindCSS
+- Backend: NodeJS
+- Ferramentas: VSCode, Figma
