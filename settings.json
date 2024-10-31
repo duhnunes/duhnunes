@@ -1,5 +1,5 @@
 {
-  // Theme
+  // =========== THEME ===========
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "symbols",
     // "workbench.productIconTheme": "fluent-icons",
@@ -56,6 +56,7 @@
       "editor.parameterHints.enabled": false,
       "editor.renderLineHighlight": "all",
       "editor.minimap.enabled": false,
+      "editor.glyphMargin": false,
       "explorer.compactFolders": false,
       "window.commandCenter": false,
       "workbench.layoutControl.enabled": false,
