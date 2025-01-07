@@ -1,7 +1,3 @@
-# HOW TO USE
-
-1. After create your project, go to `.eslintrc.cjs` (or other name file from eslint) and paste only de rules inside the files.
-
 # OPTIONAL USES TO DEPLOY
 
 #### _To use gh-pages:_
@@ -10,10 +6,10 @@
 2. Open `package.json` file  
    2.1 Add `homepage` property with URL: `https://{username}.github.io/{repo-name}` right after `version`
 3. Open `package.json` file  
-    3.1 Inside `scripts` object right before `start`  
-        - 3.1.1 Add `"predeploy": "npm run build"`  
-        - 3.1.2 Add `"deploy": "gh-pages -d build"`  
-    3.2 If use TS in project rename `"gh-pages -d build"` to `"gh-pages -d dist"`
+   3.1 Inside `scripts` object right before `start`  
+    - 3.1.1 Add `"predeploy": "npm run build"`  
+    - 3.1.2 Add `"deploy": "gh-pages -d build"`  
+   3.2 If use TS in project rename `"gh-pages -d build"` to `"gh-pages -d dist"`
 
 4. Run `npm run deploy` to deploy to the web  
    4.1 You can specify a custom commit message with:  
