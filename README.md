@@ -8,12 +8,11 @@
 
 ## Frontend Developer
 
-Sou um cara simples que gosta de criar layouts de FrontEnd e estou em constante evolução para me tornar um Dev Fullstack através de boas práticas para ter um código mais organizado, bonito e mais seguro.
+Me chamo DuH Nunes e aqui é onde compartilho meus projetos pessoais concluídos. Sou um cara simples que gosta de criar layouts de FrontEnd e me mantenho estudando para me tornar Dev Fullstack através de boas práticas para ter um código mais organizado, bonito e mais seguro.
 
-Fiquei fascinado pelo ReactJS desde o primeiro contato e minha admiração só cresceu com cada projeto desenvolvido, novos aprendizados e bibliotecas utilizadas; ele realmente parece mágico com todas as possibilidades que oferece. Conhecer e começar a utilizar o NextJS foi também algo impressionante, é como colocar turbo em um carro, potencializa o que já é bom e deixa ainda melhor.
+Fiquei fascinado pelo ReactJS desde o primeiro contato e minha admiração só cresceu com cada projeto desenvolvido, novos aprendizados e bibliotecas utilizadas; ele realmente parece mágico com todas as possibilidades que oferece.
 
 Principais habilidades:
 
-- Frontend: HTML, CSS, ReactJS, NextJS, ReactJS, Typescript, TailwindCSS
-- Backend: NodeJS
+- Frontend: HTML, CSS, ReactJS, ReactJS, Typescript, TailwindCSS
 - Ferramentas: VSCode, Figma
