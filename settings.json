@@ -1,235 +1,242 @@
 {
   // =========== THEME ===========
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.iconTheme": "symbols",
-    // "workbench.productIconTheme": "fluent-icons",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "symbols",
+  // "workbench.productIconTheme": "fluent-icons",
   //
-  
+
   // =========== GLOBAL SETUP CFG ===========
-    "update.mode": "default",
-    "workbench.startupEditor": "none",
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "security.workspace.trust.untrustedFiles": "open",
-    "editor.accessibilitySupport": "off",
-    "terminal.integrated.gpuAcceleration": "on",
-    "terminal.integrated.showExitAlert": false,
-    "terminal.integrated.commandsToSkipShell": [
-      "workbench.action.terminal.sendSequence"
-    ],
-    "terminal.integrated.defaultProfile.windows": "PowerShell 7",
-    "terminal.integrated.profiles.windows": {
-      "Command Prompt": {
-        "args": [],
-        "icon": "terminal-cmd",
-        "path": [
-          "${env:windir}\\Sysnative\\cmd.exe",
-          "${env:windir}\\System32\\cmd.exe"
-        ]
-      },
-      "Git Bash": {
-        "source": "Git Bash"
-      },
-      "PowerShell": {
-        "icon": "terminal-powershell",
-        "source": "PowerShell"
-      },
-      "PowerShell 7": {
-        "args": [],
-        "icon": "terminal-powershell",
-        "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
-      }
+  "update.mode": "default",
+  "workbench.startupEditor": "none",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.terminal.sendSequence"
+  ],
+  "terminal.integrated.defaultProfile.windows": "PowerShell 7",
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+      "args": [],
+      "icon": "terminal-cmd",
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ]
     },
-
-    // To smoothScrolling
-    "terminal.integrated.smoothScrolling": true,
-    "workbench.list.smoothScrolling": true,
-    "editor.smoothScrolling": true,
-    // Files Associations
-    "files.associations": {
-      ".env.*": "dotenv",
-      "*.css": "css",
+    "Git Bash": {
+      "source": "Git Bash"
     },
+    "PowerShell": {
+      "icon": "terminal-powershell",
+      "source": "PowerShell"
+    },
+    "PowerShell 7": {
+      "args": [],
+      "icon": "terminal-powershell",
+      "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+    }
+  },
 
-    // TO VISUALS VSCODE
-      "editor.unicodeHighlight.nonBasicASCII": false,
-      "editor.parameterHints.enabled": false,
-      "editor.renderLineHighlight": "all",
-      "editor.minimap.enabled": false,
-      "editor.glyphMargin": false,
-      "explorer.compactFolders": false,
-      "window.commandCenter": false,
-      "workbench.layoutControl.enabled": false,
-      "symbols.hidesExplorerArrows": false,
-      "window.titleBarStyle": "custom",
-      "window.menuBarVisibility": "toggle",
-      "editor.scrollbar.vertical": "visible",
-      "workbench.statusBar.visible": false,
-      "explorer.sortOrder": "foldersNestsFiles",
-      "breadcrumbs.enabled": false,
-      
-      "workbench.activityBar.location": "top",
-      
-      
-      "explorer.fileNesting.enabled": true,
-      "explorer.fileNesting.expand": false,
-      "explorer.fileNesting.patterns": {
-        "package.json": ".eslint*, eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*, biome.*, tsup*",
-        "tailwind.config.*": "tailwind.config*, postcss.config*, .prettierrc*",
-        // ".env.local": ".env*",
-        ".env": ".env*",
-        "index.mjs": "index.d.mts"
-      },
-    //
+  // To smoothScrolling
+  "terminal.integrated.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "editor.smoothScrolling": true,
 
-    
+  // Files Associations
+  "files.associations": {
+    ".env.*": "dotenv",
+    "*.css": "css",
+    ".env*": "dotenv"
+  },
 
-    // TO AUTOMATE VSCODE
-      "typescript.updateImportsOnFileMove.enabled": "always",
-      "javascript.updateImportsOnFileMove.enabled": "always",
-      "editor.tabCompletion": "on",
-      // "javascript.suggest.autoImports": true,
-      // "typescript.suggest.autoImports": true,
-      "files.eol": "\n",
-      "editor.tabSize": 2,
-      "editor.wordWrap": "on",
-      "editor.suggestSelection": "first",
-      "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
-        // "source.addMissingImports": "always"
-      },
+  // TO VISUALS VSCODE
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.parameterHints.enabled": false,
+  "editor.renderLineHighlight": "all",
+  "editor.minimap.enabled": false,
+  "editor.glyphMargin": false,
+  "explorer.compactFolders": false,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "symbols.hidesExplorerArrows": false,
+  "window.titleBarStyle": "custom",
+  "window.menuBarVisibility": "toggle",
+  "editor.scrollbar.vertical": "visible",
+  "workbench.statusBar.visible": false,
+  "explorer.sortOrder": "foldersNestsFiles",
+  "breadcrumbs.enabled": false,
 
-      "emmet.includeLanguages": {
-      "javascript": "javascriptreact",
-      },
-      "emmet.syntaxProfiles": {
-        "javascript": "jsx",
-      },
-      // To define line limits to code
-      "editor.rulers": [
-        80,
-        120
-      ],
-    //
+  "workbench.activityBar.location": "top",
+
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": ".eslint*, eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*, biome.*, tsup*",
+    "tailwind.config.*": "tailwind.config*, postcss.config*, .prettierrc*",
+    // ".env.local": ".env*",
+    ".env": ".env*",
+    "index.mjs": "index.d.mts"
+  },
+  //
+
+  // TO AUTOMATE VSCODE
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.tabCompletion": "on",
+  // "javascript.suggest.autoImports": true,
+  // "typescript.suggest.autoImports": true,
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.suggestSelection": "first",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.biome": "explicit",
+    "source.fixAll.prettier": "explicit",
+    "source.organizeImports.biome": "explicit"
+    // "source.removeUnusedImports": "explicit",
+    // "source.addMissingImports": "always",
+  },
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  // To define line limits to code
+  "editor.rulers": [80, 120],
+  //
 
   //
 
   // =========== EXTENSIONS SETUP CFG ===========
-    "extensions.ignoreRecommendations": true,
+  "extensions.ignoreRecommendations": true,
+  "livePreview.autoRefreshPreview": "On Changes to Saved Files",
 
-    // EXTENSION TO VISUAL
-      "workbench.productIconTheme": "bongocat",
-    
-      // Colorize By YuTengjing
-        "colorize.enable_search_variables": true,
-        "colorize.hide_current_line_decorations": false,
-        "colorize.decoration_type": "background",
-        "colorize.languages": [
-          "javascript",
-          "typescript",
-          "tailwindcss",
-          "jsx",
-          "tsx",
-          "json",
-        ],
-        "colorize.include": [
-          "**/*.css",
-          "**/*.scss",
-          "**/*.sass",
-          "**/*.less",
-          "**/*.styl",
-          "**/*.ts",
-          "**/*.tsx",
-          "**/*.json",
-        ],
-        "colorize.exclude":[
-          "**/.git",
-          "**/.svn",
-          "**/.hg",
-          "**/CVS",
-          "**/.DS_Store",
-          "**/node_modules",
-          "**/bower_components",
-          "**/tmp",
-          "**/dist",
-          "**/tests"
-        ],
-        "colorize.colorized_colors": [
-          "BROWSERS_COLORS",
-          "HEXA",
-          "RGB",
-          "HSL"
-        ],
-      //
+  // EXTENSION TO VISUAL
+  "workbench.productIconTheme": "bongocat",
 
-      // Apc Customize UI++
-        // "apc.font.family": "Roboto Mono",
-        "apc.menubar.compact": false,
-        "apc.electron": {
-          "titleBarStyle": "hidden",
-          // "trafficLightPosition": {
-          //   "x": 11,
-          //   "y": 10
-          // },
-          "titleBarOverlay": {
-            "color": "#2f3241",
-            "symbolColor": "#74b1be",
-            "height": 60
-          }
-        },
-        "apc.stylesheet": {
-          ".title": "flex-direction: column; align-items: center",
-          ".part > .title > .title-label": "height: 0; padding-left:0px!important",
-          ".title-label > h2": "display: none",
-          ".title > .title-actions": " width: 100%; padding-left: 0!important",
-          ".title > .title-actions ul": "justify-content: space-between!important",
-          ".composite > .composite-bar-container > .composite-bar": "width:100%",
-          // ".composite > .composite-bar-container > .composite-bar ul": "justify-content:space-between",
-        },
-        "apc.listRow": {
-          "height": 24,
-        },
-        "apc.activityBar": {
-          "size": 68,
-          "itemMargin": 6,
-          "itemSize": 52
-        },
-        "apc.sidebar.titlebar": {
-          "height": 36,
-          "fontSize": 13,
-        },
-      //
-
-    //
-    
-    // PRISMA STUDIO - Prisma By Prisma prisma.io
-      "prisma.showPrismaDataPlatformNotification": false,
-      "[prisma]": {
-        "editor.formatOnSave": true
-      },
-    //
-
-    // MDX IntelliSense by unified unifiedjs.com
-      "mdx.server.enable": true,
-    //
-
-    // Tailwind CSS IntelliSense By Tailwind Labs tailwindcss.com
-      "tailwindCSS.experimental.classRegex": [
-        [
-          "([\"'`][^\"'`]*.*?[\"'`])",
-          "[\"'`]([^\"'`]*).*?[\"'`]"
-        ],
-        ["tv\\(([^)]*)\\)", "\"'`.*?[\"'`]"],
-        "class:\\s*?[\"'`]([^\"'`]*).*?,"
-      ],
-    //
-
-    // DISCORD RICH PRESENCE By leonardssh
-      "vscord.status.details.text.editing": "🛹Vibration",
-      "vscord.status.details.text.viewing": "🛹Vibration",
-      "vscord.status.state.text.editing": "👩‍💻 Editing {file_name}{file_extension}:{current_line}:{current_column}",
-    //
-    
+  // Colorize By YuTengjing
+  "colorize.enable_search_variables": true,
+  "colorize.hide_current_line_decorations": false,
+  "colorize.decoration_type": "background",
+  "colorize.languages": [
+    "javascript",
+    "typescript",
+    "tailwindcss",
+    "jsx",
+    "tsx",
+    "json"
+  ],
+  "colorize.include": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "**/*.styl",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.json"
+  ],
+  "colorize.exclude": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/node_modules",
+    "**/bower_components",
+    "**/tmp",
+    "**/dist",
+    "**/tests"
+  ],
+  "colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL"],
   //
 
+  // Apc Customize UI++
+  // "apc.font.family": "Roboto Mono",
+  "apc.menubar.compact": false,
+  "apc.electron": {
+    "titleBarStyle": "hidden",
+    // "trafficLightPosition": {
+    //   "x": 11,
+    //   "y": 10
+    // },
+    "titleBarOverlay": {
+      "color": "#2f3241",
+      "symbolColor": "#74b1be",
+      "height": 60
+    }
+  },
+  "apc.stylesheet": {
+    ".title": "flex-direction: column; align-items: center",
+    ".part > .title > .title-label": "height: 0; padding-left:0px!important",
+    ".title-label > h2": "display: none",
+    ".title > .title-actions": " width: 100%; padding-left: 0!important",
+    ".title > .title-actions ul": "justify-content: space-between!important",
+    ".composite > .composite-bar-container > .composite-bar": "width:100%"
+    // ".composite > .composite-bar-container > .composite-bar ul": "justify-content:space-between",
+  },
+  "apc.listRow": {
+    "height": 24
+  },
+  "apc.activityBar": {
+    "size": 68,
+    "itemMargin": 6,
+    "itemSize": 52
+  },
+  "apc.sidebar.titlebar": {
+    "height": 36,
+    "fontSize": 13
+  },
+  //
+
+  //
+
+  // PRISMA STUDIO - Prisma By Prisma prisma.io
+  "prisma.showPrismaDataPlatformNotification": false,
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
+  //
+
+  // MDX IntelliSense by unified unifiedjs.com
+  "mdx.server.enable": true,
+  //
+
+  // Tailwind CSS IntelliSense By Tailwind Labs tailwindcss.com
+  "tailwindCSS.experimental.classRegex": [
+    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["tv\\(([^)]*)\\)", "\"'`.*?[\"'`]"],
+    "class:\\s*?[\"'`]([^\"'`]*).*?,"
+  ],
+  //
+
+  // DISCORD RICH PRESENCE By leonardssh
+  "vscord.status.details.text.editing": "🛹Vibration",
+  "vscord.status.details.text.viewing": "🛹Vibration",
+  "vscord.status.state.text.editing": "👩‍💻 Editing {file_name}{file_extension}:{current_line}:{current_column}",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  }
+  //
+
+  //
 }
