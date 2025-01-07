@@ -8,11 +8,19 @@
 
 ## Frontend Developer
 
-Me chamo DuH Nunes e aqui é onde compartilho meus projetos pessoais concluídos. Sou um cara simples que gosta de criar layouts de FrontEnd e me mantenho estudando para me tornar Dev Fullstack através de boas práticas para ter um código mais organizado, bonito e mais seguro.
+Me chamo DuH Nunes, Dev FrontEnd com desejos de me tornar um Dev FullStack.
+Gosto de Fazer sites, também gosto de modelagem 3D (por hobby).
 
-Fiquei fascinado pelo ReactJS desde o primeiro contato e minha admiração só cresceu com cada projeto desenvolvido, novos aprendizados e bibliotecas utilizadas; ele realmente parece mágico com todas as possibilidades que oferece.
+## Principais habilidades
 
-Principais habilidades:
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-- Frontend: HTML, CSS, ReactJS, ReactJS, Typescript, TailwindCSS
-- Ferramentas: VSCode, Figma
+## Ferramentas
+
+![VSCode](https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
