@@ -8,17 +8,17 @@
 
 ## Frontend Developer
 
-Me chamo DuH Nunes, Dev FrontEnd com desejos de me tornar um Dev FullStack.
-Gosto de Fazer sites, também gosto de modelagem 3D (por hobby).
+Me chamo DuH Nunes e sempre gostei de criar sites.
+Passei por um hiato de alguns anos sem fazê-los e quando voltei, BOOOM uma enxurrada de tecnologias novas jogadas na minha cara! Agora busco estudar e evoluir meu conhecimento, principalmente em NextJS e relacionados, para criar sites completos com códigos organizados, bonitos e mais seguros.
 
 ## Principais habilidades
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![NextJS](https://img.shields.io/badge/NextJS-000000?style=for-the-badge&logo=next.js&logoColor=white)
 
 ## Ferramentas
 
