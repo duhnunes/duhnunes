@@ -9,7 +9,12 @@
 ## Frontend Developer
 
 Me chamo DuH Nunes e sempre gostei de criar sites.
-Passei por um hiato de alguns anos sem fazê-los e quando voltei, BOOOM uma enxurrada de tecnologias novas jogadas na minha cara! Agora busco estudar e evoluir meu conhecimento, principalmente em NextJS e relacionados, para criar sites completos com códigos organizados, bonitos e mais seguros.
+Passei por um hiato de alguns anos sem fazê-los e quando voltei, BOOOM uma enxurrada de tecnologias novas jogadas na minha cara! Agora busco estudar e evoluir meu conhecimento, principalmente em NextJS, para criar sites completos com códigos organizados, bonitos e mais seguros.
+
+### Atualmente estudando:
+  - NestJS (Para Backend)
+  - Fastify (Para uso junto do NestJS)
+  - NextJS (Para Frontend)
 
 ## Principais habilidades
 
@@ -19,6 +24,8 @@ Passei por um hiato de alguns anos sem fazê-los e quando voltei, BOOOM uma enxu
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![NextJS](https://img.shields.io/badge/NextJS-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![NestJS](https://img.shields.io/badge/Nest.js-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
+![Fastify](https://img.shields.io/badge/FastAPI-009485.svg?style=for-the-badge&logo=fastapi&logoColor=white)
 
 ## Ferramentas
 
