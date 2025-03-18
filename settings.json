@@ -96,11 +96,14 @@
 
   // TO AUTOMATE VSCODE
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    // `typescript.preferences.preferTypeOnlyAutoImports` is optimized for frontend projects (e.g. React, Next) where type-only imports improve code clarity.
+    // However, in NestJS or other backend frameworks, it can cause dependecy injection issues.
+      "typescript.preferences.preferTypeOnlyAutoImports": true,
+    //    
+    // "typescript.suggest.autoImports": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.tabCompletion": "on",
     // "javascript.suggest.autoImports": true,
-    // "typescript.suggest.autoImports": true,
     "files.eol": "\n",
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
