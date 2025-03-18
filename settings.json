@@ -48,13 +48,11 @@
       "*.svg": "default"
     },
   //
-
   // TO SMOOTHCROLLING
     "terminal.integrated.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
     "editor.smoothScrolling": true,
   //
-
   // FILES ASSOCIATIONS
     "files.associations": {
       ".env.*": "dotenv",
@@ -79,10 +77,8 @@
     "workbench.statusBar.visible": false,
     "explorer.sortOrder": "foldersNestsFiles",
     "breadcrumbs.enabled": false,
-
     "workbench.tree.indent": 12,
     "workbench.activityBar.location": "top",
-
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
@@ -130,27 +126,25 @@
       "jsonc",
       "yaml"
     ],
-
     "emmet.includeLanguages": {
       "javascript": "javascriptreact"
     },
     "emmet.syntaxProfiles": {
       "javascript": "jsx"
     },
-
     // To define line limits to code
-      "editor.rulers": [80, 120],
-    //
+    "editor.rulers": [
+      80,
+      120
+    ],
   //
 
   // =========== EXTENSIONS SETUP CFG ===========
     "extensions.ignoreRecommendations": true,
     "livePreview.autoRefreshPreview": "On Changes to Saved Files",
-
-  // EXTENSION TO VISUAL
+    // EXTENSION TO VISUAL
     "workbench.productIconTheme": "bongocat",
-
-  // Colorize By YuTengjing
+    // Colorize By YuTengjing
     "colorize.enable_search_variables": true,
     "colorize.hide_current_line_decorations": false,
     "colorize.decoration_type": "background",
@@ -184,46 +178,50 @@
       "**/dist",
       "**/tests"
     ],
-    "colorize.colorized_colors": ["BROWSERS_COLORS", "HEXA", "RGB", "HSL"],
+    "colorize.colorized_colors": [
+      "BROWSERS_COLORS",
+      "HEXA",
+      "RGB",
+      "HSL"
+    ],
   //
 
   // Apc Customize UI++
     // "apc.font.family": "Roboto Mono",
-      "apc.menubar.compact": false,
-      "apc.electron": {
-        "titleBarStyle": "hidden",
-        // "trafficLightPosition": {
-        //   "x": 11,
-        //   "y": 10
-        // },
-        "titleBarOverlay": {
-          "color": "#2f3241",
-          "symbolColor": "#74b1be",
-          "height": 60
-        }
-      },
-      "apc.stylesheet": {
-        ".title": "flex-direction: column; align-items: center",
-        ".part > .title > .title-label": "height: 0; padding-left:0px!important",
-        ".title-label > h2": "display: none",
-        ".title > .title-actions": " width: 100%; padding-left: 0!important",
-        ".title > .title-actions ul": "justify-content: space-between!important",
-        ".composite > .composite-bar-container > .composite-bar": "width:100%"
-        // ".composite > .composite-bar-container > .composite-bar ul": "justify-content:space-between",
-      },
-      "apc.listRow": {
-        "height": 24
-      },
-      "apc.activityBar": {
-        "size": 68,
-        "itemMargin": 6,
-        "itemSize": 52
-      },
-      "apc.sidebar.titlebar": {
-        "height": 36,
-        "fontSize": 13
-      },
-    //
+    "apc.menubar.compact": false,
+    "apc.electron": {
+      "titleBarStyle": "hidden",
+      // "trafficLightPosition": {
+      //   "x": 11,
+      //   "y": 10
+      // },
+      "titleBarOverlay": {
+        "color": "#2f3241",
+        "symbolColor": "#74b1be",
+        "height": 60
+      }
+    },
+    "apc.stylesheet": {
+      ".title": "flex-direction: column; align-items: center",
+      ".part > .title > .title-label": "height: 0; padding-left:0px!important",
+      ".title-label > h2": "display: none",
+      ".title > .title-actions": " width: 100%; padding-left: 0!important",
+      ".title > .title-actions ul": "justify-content: space-between!important",
+      ".composite > .composite-bar-container > .composite-bar": "width:100%"
+      // ".composite > .composite-bar-container > .composite-bar ul": "justify-content:space-between",
+    },
+    "apc.listRow": {
+      "height": 24
+    },
+    "apc.activityBar": {
+      "size": 68,
+      "itemMargin": 6,
+      "itemSize": 52
+    },
+    "apc.sidebar.titlebar": {
+      "height": 36,
+      "fontSize": 13
+    },
   //
 
   // PRISMA STUDIO - Prisma By Prisma prisma.io
@@ -233,15 +231,19 @@
       "editor.defaultFormatter": "Prisma.prisma"
     },
   //
-
   // MDX IntelliSense by unified unifiedjs.com
     "mdx.server.enable": true,
   //
-
   // Tailwind CSS IntelliSense By Tailwind Labs tailwindcss.com
     "tailwindCSS.experimental.classRegex": [
-      ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"],
-      ["tv\\(([^)]*)\\)", "\"'`.*?[\"'`]"],
+      [
+        "([\"'`][^\"'`]*.*?[\"'`])",
+        "[\"'`]([^\"'`]*).*?[\"'`]"
+      ],
+      [
+        "tv\\(([^)]*)\\)",
+        "\"'`.*?[\"'`]"
+      ],
       "class:\\s*?[\"'`]([^\"'`]*).*?,"
     ],
   //
