@@ -2,10 +2,13 @@
   // =========== THEME ===========
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "symbols",
-    // "workbench.productIconTheme": "fluent-icons",
-    "material-icon-theme.activeIconPack": "nest",
-    "material-icon-theme.languages.associations": {
-      "dotenv": "tune"
+    "symbols.files.associations": {
+      "*.module.ts": "nest",
+      "*.controller.ts": "nest-controller",
+      "*.service.ts": "nest-service",
+      "*.decorator.ts": "nest-decorator",
+      "*.guard.ts": "nest-guard",
+      "*.middleware.ts": "nest-middleware",
     },
   //
 
@@ -79,15 +82,18 @@
     "breadcrumbs.enabled": false,
     "workbench.tree.indent": 12,
     "workbench.activityBar.location": "top",
-    "explorer.fileNesting.enabled": true,
-    "explorer.fileNesting.expand": false,
-    "explorer.fileNesting.patterns": {
-      "package.json": ".eslint*, eslint*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*, biome.*, tsup*",
-      "tailwind.config.*": "tailwind.config*, postcss.config*, .prettierrc*",
-      // ".env.local": ".env*",
-      ".env": ".env*",
-      "index.mjs": "index.d.mts"
-    },
+
+    // FILE NESTING
+      "explorer.fileNesting.enabled": true,
+      "explorer.fileNesting.expand": false,
+      "explorer.fileNesting.patterns": {
+        "package.json": ".eslint*, eslint*, .prettier*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*, biome.*, tsup*",
+        "tailwind.config.*": "tailwind.config*, postcss.config*",
+        // ".env.local": ".env*",
+        ".env": ".env*",
+        "index.mjs": "index.d.mts"
+      },
+    //
   //
 
   // TO AUTOMATE VSCODE
@@ -95,7 +101,8 @@
     // `typescript.preferences.preferTypeOnlyAutoImports` is optimized for frontend projects (e.g. React, Next) where type-only imports improve code clarity.
     // However, in NestJS or other backend frameworks, it can cause dependecy injection issues.
       "typescript.preferences.preferTypeOnlyAutoImports": true,
-    //    
+    //
+
     // "typescript.suggest.autoImports": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.tabCompletion": "on",
@@ -132,6 +139,10 @@
     "emmet.syntaxProfiles": {
       "javascript": "jsx"
     },
+    // To disable default VSCode paths suggestions to use "Path Intellisense" extension
+    "typescript.suggest.paths": false,
+    "javascript.suggest.paths": false,
+
     // To define line limits to code
     "editor.rulers": [
       80,
@@ -142,8 +153,6 @@
   // =========== EXTENSIONS SETUP CFG ===========
     "extensions.ignoreRecommendations": true,
     "livePreview.autoRefreshPreview": "On Changes to Saved Files",
-    // EXTENSION TO VISUAL
-    "workbench.productIconTheme": "bongocat",
     // Colorize By YuTengjing
     "colorize.enable_search_variables": true,
     "colorize.hide_current_line_decorations": false,
@@ -255,6 +264,8 @@
     "editor.tokenColorCustomizations": {
       "textMateRules": []
     },
+  //
+  // DotEnv
     "dotenv.enableAutocloaking": false
   //
 }
