@@ -9,7 +9,7 @@
 ## Frontend Developer
 
 Me chamo DuH Nunes e sempre gostei de criar sites.
-Passei por um hiato de alguns anos sem fazê-los e quando voltei, BOOOM uma enxurrada de tecnologias novas jogadas na minha cara! Agora busco estudar e evoluir meu conhecimento, principalmente em NextJS, para criar sites completos com códigos organizados, bonitos e mais seguros.
+Passei por um hiato de alguns anos sem fazê-los e quando voltei, BOOOM uma enxurrada de tecnologias novas jogadas na minha cara! Agora busco estudar e evoluir meu conhecimento em NextJS e NestJS, para criar apps completos com códigos organizados, bonitos e mais seguros.
 
 ### Atualmente estudando:
   - NestJS (Para Backend)
