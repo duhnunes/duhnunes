@@ -24,7 +24,7 @@
     "terminal.integrated.commandsToSkipShell": [
       "workbench.action.terminal.sendSequence"
     ],
-    "terminal.integrated.defaultProfile.windows": "PowerShell 7",
+    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
     "terminal.integrated.profiles.windows": {
       "Command Prompt": {
         "args": [],
@@ -40,6 +40,10 @@
       "PowerShell": {
         "icon": "terminal-powershell",
         "source": "PowerShell"
+      },
+      "Ubuntu (WSL)": {
+        "path": "wsl.exe",
+        "args": [] 
       },
       "PowerShell 7": {
         "args": [],
@@ -266,6 +270,9 @@
     },
   //
   // DotEnv
-    "dotenv.enableAutocloaking": false
+    "dotenv.enableAutocloaking": false,
+    "security.allowedUNCHosts": [
+      "wsl.localhost"
+    ]
   //
 }
