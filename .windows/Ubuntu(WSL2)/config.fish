@@ -13,10 +13,7 @@ alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time
 alias cd="z"
 alias refresh="source ~/.config/fish/config.fish; echo 'Fish config refreshed!!'"
 
-# Aliases for Partitions
-# alias c="z /mnt/c/"
-# alias d="z /mnt/d/"
-# alias e="z /mnt/e/"
+alias github="z d github"
 
 # FZF
 set -x FZF_CTRL_T_OPTS "--style full --walker-skip .git,/node_modules,target --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
