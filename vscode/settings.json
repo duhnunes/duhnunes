@@ -26,29 +26,9 @@
     ],
     "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
     "terminal.integrated.profiles.windows": {
-      "Command Prompt": {
-        "args": [],
-        "icon": "terminal-cmd",
-        "path": [
-          "${env:windir}\\Sysnative\\cmd.exe",
-          "${env:windir}\\System32\\cmd.exe"
-        ]
-      },
-      "Git Bash": {
-        "source": "Git Bash"
-      },
-      "PowerShell": {
-        "icon": "terminal-powershell",
-        "source": "PowerShell"
-      },
       "Ubuntu (WSL)": {
         "path": "wsl.exe",
         "args": [] 
-      },
-      "PowerShell 7": {
-        "args": [],
-        "icon": "terminal-powershell",
-        "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
       }
     },
     "workbench.editorAssociations": {
