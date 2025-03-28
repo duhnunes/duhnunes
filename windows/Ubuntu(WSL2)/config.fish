@@ -5,6 +5,7 @@ end
 # Initialization
 starship init fish | source
 zoxide init fish | source
+source ~/.fzf.fish
 
 # Aliases
 alias cat="batcat --theme=GitHub"
