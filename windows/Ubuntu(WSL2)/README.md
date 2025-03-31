@@ -31,11 +31,12 @@
   5.1.7 **Habilitar material acrílico**: `ON`  
 7. Install [Bat](https://github.com/sharkdp/bat): `sudo apt install bat`  
 8. Install [Zoxide](https://github.com/ajeetdsouza/zoxide): `sudo apt install zoxide`  
-9. Install [Cargo](https://github.com/rust-lang/cargo): `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`  
-10. Install [Eza](https://github.com/eza-community/eza): `cargo install eza`  
-11. Install [FZF](https://github.com/junegunn/fzf): `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`  
+9. Install [Cargo](https://github.com/rust-lang/cargo): `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+10. Instal `sudo apt install build-essential`  
+11. Install [Eza](https://github.com/eza-community/eza): `cargo install eza`  
+12. Install [FZF](https://github.com/junegunn/fzf): `git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf`  
 10.1 Execute Installation: `~/.fzf/install`  
 
-12. Open Terminal and Type: `code ~/.config/fish/config.fish`  
+13. Open Terminal and Type: `code ~/.config/fish/config.fish`  
 11.1 Paste all content from [Config Fish File](config.fish)  
 
