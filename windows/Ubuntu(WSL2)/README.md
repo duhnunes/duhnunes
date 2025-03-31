@@ -10,9 +10,10 @@
 1.4 Open `Open JSON File`  
   1.4.1 Config [Catppuccin for Windows Terminal](https://github.com/catppuccin/windows-terminal?tab=readme-ov-file)  
 1.5 In **Inicialization**  
-  1.5.1 **Default Profile** select: `Ubuntu`  
-  1.5.2 **Launch on machine startup**: `ON`  
-2. Open Terminal (Ubuntu should open)  
+  1.5.1 **Default Profile** select: `Ubuntu`
+  1.5.2 **Default Terminal App**: `Windows Terminal`  
+  1.5.3 **Launch on machine startup**: `ON`  
+3. Open Terminal (Ubuntu should open)  
 2.1 Type `sudo apt update`  
 2.2 Install [Fish Shell](https://fishshell.com/): `sudo apt install fish`  
 2.3 Type `chsh -s /usr/bin/fish` to default Fish Shell  
@@ -29,7 +30,7 @@
   5.1.5 **Estilo de texto intenso**: `Fonte em negrito com cores brilhantes`  
   5.1.6 **Opacidade de Fundo**: `80%`  
   5.1.7 **Habilitar material acrílico**: `ON`  
-7. Install [Bat](https://github.com/sharkdp/bat): `sudo apt install bat`  
+<!-- 7. Install [Bat](https://github.com/sharkdp/bat): `sudo apt install bat`  -->
 8. Install [Zoxide](https://github.com/ajeetdsouza/zoxide): `sudo apt install zoxide`  
 9. Install [Cargo](https://github.com/rust-lang/cargo): `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 10. Instal `sudo apt install build-essential`  
