@@ -26,7 +26,7 @@
   5.1.5 **Estilo de texto intenso**: `Fonte em negrito com cores brilhantes`  
   5.1.6 **Opacidade de Fundo**: `80%`  
   5.1.7 **Habilitar material acrílico**: `ON`  
-<!-- 7. Install [Bat](https://github.com/sharkdp/bat): `sudo apt install bat`  -->  
+7. Install [Bat](https://github.com/sharkdp/bat): `winget install sharkdp.bat`  
 6. Install [Eza](https://github.com/eza-community/eza): `winget install eza-community.eza`  
   6.1 Open Profile `code $PROFILE`  
   6.2 And add this configurations:  
