@@ -1,23 +1,23 @@
 # Configuration for Full Windows Powershell Terminal
-> A configuração completa de como eu utilizo o meu terminal no meu dia a dia.  
 > A cada instalação, é recomendado reiniciar o terminal.  
 
 1. Open `Terminal`  
-1.1 Go to Settings `CTRL+,`  
-1.2 Open `Open JSON File`  
+1.1 Install PowerShell 7: `winget install --id Microsoft.PowerShell --source winget`  
+1.2 Go to Settings `CTRL+,`  
+1.3 Open `Open JSON File`  
   1.2.1 Config [Catppuccin for Windows Terminal](https://github.com/catppuccin/windows-terminal?tab=readme-ov-file)  
 1.3 In **Inicialization**  
-  1.3.1 **Default Profile** select: `Windows Powershel`
+  1.3.1 **Default Profile** select: `Powershel`  
   1.3.2 **Default Terminal App**: `Windows Terminal`  
   1.3.3 **Launch on machine startup**: `ON`  
-2. Close and Open Terminal (Powershell should be Open)  
-3. Install [starship](https://starship.rs/): `winget install --id Starship.Starship`  
+3. Close and Open Terminal (PowerShell should be Open)  
+4. Install [starship](https://starship.rs/): `winget install --id Starship.Starship`  
   3.1 Open Your profile `code $PROFILE`  
   3.2 Add this to running starship: `Invoke-Expression (&starship init powershell)`  
-4. Install [JestBrains NerdFonts](https://www.nerdfonts.com/font-downloads)  
-5. Open `Terminal`  
+5. Install [JestBrains NerdFonts](https://www.nerdfonts.com/font-downloads)  
+6. Open `Terminal`  
 5.1 Go to Settings: `CTRL+,`  
-5.2 Aside Menu Profile: `Windows Powershell`  
+5.2 Aside Menu Profile: `Powershell`  
 5.3 In **Appearance**  
   5.1.1 **Color Scheme**: `Catppuccin Mocha`  
   5.1.2 **Font Type**: `JetBrainsMono Nerd Font`  
@@ -50,14 +50,11 @@
     }
   ```
 9. Install [PSReadLine](https://github.com/PowerShell/PSReadLine):  
-9.1 Verify PowerShellGet: `Get-Module -Name PowerShellGet -ListAvailable`  
-9.2 Install PowerShellGet: `Install-Module -Name PowerShellGet -Force -AllowClobber`  
-  9.2.1 If using PowerShell 5.1 need: `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`  
-9.3 Confirm installation: `Get-Module -Name PowerShellGet -ListAvailable`  
-9.4 Install Module: `Install-Module -Name PowerShellGet -Force; exit`  
-9.5 Install PSReadLine: `Install-Module PSReadLine -Repository PSGallery -Scope CurrentUser -Force`  
-9.6 Enable Suggests: `Get-Module PSReadLine`  
-9.7 Add in your Profile:  
+9.1 Confirm installation: `Get-Module -Name PowerShellGet -ListAvailable`  
+9.2 Install Module: `Install-Module -Name PowerShellGet -Force; exit`  
+9.3 Install PSReadLine: `Install-Module PSReadLine -Repository PSGallery -Scope CurrentUser -Force`  
+9.4 Enable Suggests: `Get-Module PSReadLine`  
+9.5 Add in your Profile:  
   ```PowerShell
     # PSREADLINE
     # Habilita sugestões preditivas com base no histórico
@@ -65,7 +62,7 @@
     Set-PSReadLineOption -PredictionViewStyle Inline
   ```
 10. Install [FZF](https://github.com/junegunn/fzf): `winget install fzf`  
-10.1 Add in Profile:
+10.1 Add in Profile:  
   ```PowerShell
     #FZF
     $env:FZF_CTRL_T_OPTS = "--style full --walker-skip .git,/node_modules,target --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
