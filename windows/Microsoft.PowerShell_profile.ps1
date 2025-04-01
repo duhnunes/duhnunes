@@ -1,12 +1,18 @@
 # Alias
 Remove-Item alias:ls -ErrorAction SilentlyContinue
 function ls {
-  eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions
+    eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions
 }
-
 Remove-Item alias:cd -ErrorAction SilentlyContinue
 function cd {
-  z
+    z
+}
+function refresh {
+    # Recarrega as variáveis do Path
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
+
+    # Recarega o perfil do PowerShell
+    . $PROFILE
 }
 
 function trash {
@@ -15,7 +21,12 @@ function trash {
 
 # Initialization
 Invoke-Expression (&starship init powershell)
-Invoke-Expression (& { (zoxide init powershell | Out-String) })
+Invoke-Expression (& { (zoxide init powershell | Out-String)})
+
+# PSREADLINE
+# Habilita sugestões preditivas com base no histórico
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle Inline
 
 #FZF
 $env:FZF_CTRL_T_OPTS = "--style full --walker-skip .git,/node_modules,target --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
@@ -29,9 +40,3 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+t" -ScriptBlock {
         [Microsoft.PowerShell.PSConsoleReadLine]::Insert($selection)
     }
 }
-
-
-# PSREADLINE
-# Habilita sugestões preditivas com base no histórico
-Set-PSReadLineOption -PredictionSource History
-Set-PSReadLineOption -PredictionViewStyle Inline
