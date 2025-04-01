@@ -24,12 +24,12 @@
     "terminal.integrated.commandsToSkipShell": [
       "workbench.action.terminal.sendSequence"
     ],
-    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
     "terminal.integrated.profiles.windows": {
-      "Ubuntu (WSL)": {
-        "path": "wsl.exe",
-        "args": [] 
-      }
+      "PowerShell": {
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  }
+
     },
     "workbench.editorAssociations": {
       "*.svg": "default"
@@ -253,6 +253,7 @@
     "dotenv.enableAutocloaking": false,
     "security.allowedUNCHosts": [
       "wsl.localhost"
-    ]
+    ],
+    "remote.autoForwardPortsSource": "hybrid"
   //
 }
