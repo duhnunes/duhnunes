@@ -19,6 +19,29 @@ function trash {
   start shell:RecycleBinFolder
 }
 
+# Commands to Partitions
+function b {
+    Set-Location B:\
+    ls
+}
+function c {
+    Set-Location $HOME
+    ls
+}
+function d {
+    Set-Location D:\
+    ls
+}
+function e {
+    Set-Location E:\
+    ls
+}
+function g {
+    Set-Location G:\
+    ls
+}
+
+
 # Initialization
 Invoke-Expression (&starship init powershell)
 Invoke-Expression (& { (zoxide init powershell | Out-String)})
