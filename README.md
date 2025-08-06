@@ -6,11 +6,10 @@
 [![Codepen Badge](https://img.shields.io/badge/-duhnunes-262626?style=flat-square&labelColor=262626&logo=codepen&logoColor=white&link=https://codepen.io/DuH-Nunes)](https://codepen.io/DuH-Nunes)
 [![Notion Badge](https://img.shields.io/badge/-duhnunes-2F3437?style=flat-square&labelColor=2F3437&logo=notion&logoColor=white&link=https://duhnunes.notion.site/1610bd79551d807a85cdc2e81cb79316?v=1610bd79551d806cafcd000ccbd3434a&pvs=4)](https://duhnunes.notion.site/1610bd79551d807a85cdc2e81cb79316?v=1610bd79551d806cafcd000ccbd3434a&pvs=4)
 
-## ?
+## 
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![NextJS](https://img.shields.io/badge/NextJS-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![NestJS](https://img.shields.io/badge/Nest.js-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-000000?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-000000?style=for-the-badge&logo=css3&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-000000?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![NestJS](https://img.shields.io/badge/Nest.js-%000000.svg?style=for-the-badge&logo=nestjs&logoColor=white)
