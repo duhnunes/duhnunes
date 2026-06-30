@@ -1,5 +1,5 @@
 # Configuration for Full Windows Powershell Terminal
-> A cada instalação, é recomendado reiniciar o terminal.  
+> After each installation, it is recommended to restart the terminal.  
 
 1. Open `Terminal`  
 1.1 Install PowerShell 7: `winget install --id Microsoft.PowerShell --source winget`  
@@ -21,11 +21,11 @@
 5.3 In **Appearance**  
   5.1.1 **Color Scheme**: `Catppuccin Mocha`  
   5.1.2 **Font Type**: `JetBrainsMono Nerd Font`  
-  5.1.3 **Ajuste automaticamente a clareza do texto indistinguível**: `Apenas para cores no esquema de cores`  
-  5.1.4 **Cursor**: `Caixa cheia`  
-  5.1.5 **Estilo de texto intenso**: `Fonte em negrito com cores brilhantes`  
-  5.1.6 **Opacidade de Fundo**: `80%`  
-  5.1.7 **Habilitar material acrílico**: `ON`  
+  5.1.3 **Automatically adjust the clarity of indistinguishable text**: `Only for colors in the color scheme`  
+  5.1.4 **Cursor**: `Filled box`  
+  5.1.5 **Intense text style**: `Bold font with bright colors`  
+  5.1.6 **Background Opacity**: `80%`  
+  5.1.7 **Enable acrylic material**: `ON`  
 7. Install [Bat](https://github.com/sharkdp/bat): `winget install sharkdp.bat`  
 6. Install [Eza](https://github.com/eza-community/eza): `winget install eza-community.eza`  
   6.1 Open Profile `code $PROFILE`  
@@ -57,7 +57,7 @@
 9.5 Add in your Profile:  
   ```PowerShell
     # PSREADLINE
-    # Habilita sugestões preditivas com base no histórico
+    # Enables predictive suggestions based on history
     Set-PSReadLineOption -PredictionSource History
     Set-PSReadLineOption -PredictionViewStyle Inline
   ```
@@ -66,10 +66,10 @@
   ```PowerShell
     #FZF
     $env:FZF_CTRL_T_OPTS = "--style full --walker-skip .git,/node_modules,target --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-    # Define as opções do FZF para o atalho (mesmo que o FZF use essa variável internamente)
+    # Defines FZF options for the shortcut (even though FZF uses this variable internally)
     $env:FZF_CTRL_T_OPTS = "--style full --walker-skip .git,/node_modules,target --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
-    # Define o atalho Ctrl+t para chamar o FZF com preview usando bat
+    # Defines the Ctrl+t shortcut to call FZF with preview using bat
     Set-PSReadLineKeyHandler -Chord "Ctrl+t" -ScriptBlock {
         $selection = fzf --preview "bat -n --color=always {}"
         if ($selection) {

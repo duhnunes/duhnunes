@@ -1,8 +1,9 @@
 {
-  // =========== THEME ===========
+  // Theme
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "symbols",
     "symbols.files.associations": {
+      "@types": "typescript",
       "*.module.ts": "nest",
       "*.controller.ts": "nest-controller",
       "*.service.ts": "nest-service",
@@ -10,9 +11,10 @@
       "*.guard.ts": "nest-guard",
       "*.middleware.ts": "nest-middleware",
     },
-  //
-
+  // 
   // =========== GLOBAL SETUP CFG ===========
+    "files.encoding": "utf8",
+    "files.autoGuessEncoding": false,
     "update.mode": "default",
     "workbench.startupEditor": "none",
     "explorer.confirmDelete": false,
@@ -27,224 +29,256 @@
     "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.profiles.windows": {
       "PowerShell": {
-      "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
-      }
+        "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      },
+      "Command Prompt": {
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ],
+        "args": [],
+        "icon": "terminal-cmd"
+      },
+      "Git Bash": {
+        "source": "Git Bash",
+        "icon": "terminal-git-bash"
+      },
+      "PowerShell7": {
+        "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+      },
     },
     "workbench.editorAssociations": {
-      "*.svg": "default"
+      "*.svg": "default", // Use default editor for SVG files
+      // "*.svg": "imagePreview.previewEditor",  // Use Image Preview for SVG files
     },
-  //
-  // TO SMOOTHCROLLING
-    "terminal.integrated.smoothScrolling": true,
-    "workbench.list.smoothScrolling": true,
-    "editor.smoothScrolling": true,
-  //
-  // FILES ASSOCIATIONS
-    "files.associations": {
-      ".env.*": "dotenv",
-      "*.css": "css",
-      ".env*": "dotenv"
+    //
+    // TO SMOOTHCROLLING
+      "terminal.integrated.smoothScrolling": true,
+      "workbench.list.smoothScrolling": true,
+      "editor.smoothScrolling": true,
+    //
+    // FILES ASSOCIATIONS
+      "files.associations": {
+        "*.sii": "sii",
+        ".env.*": "dotenv",
+        "*.css": "css",
+        ".env*": "dotenv",
+        ".prettierrc": "json"
     },
-  //
-
-  // TO VISUALS VSCODE
-    "editor.unicodeHighlight.nonBasicASCII": false,
-    "editor.parameterHints.enabled": false,
-    "editor.renderLineHighlight": "all",
-    "editor.minimap.enabled": false,
-    "editor.glyphMargin": false,
-    "explorer.compactFolders": false,
-    "window.commandCenter": false,
-    "workbench.layoutControl.enabled": false,
-    "symbols.hidesExplorerArrows": false,
-    "window.titleBarStyle": "custom",
-    "window.menuBarVisibility": "toggle",
-    "editor.scrollbar.vertical": "visible",
-    "workbench.statusBar.visible": false,
-    "explorer.sortOrder": "foldersNestsFiles",
-    "breadcrumbs.enabled": false,
-    "workbench.tree.indent": 12,
-    "workbench.activityBar.location": "top",
-
+    //
+    // TO VISUALS VSCODE
+      "editor.unicodeHighlight.nonBasicASCII": false,
+      "editor.inlineSuggest.enabled": false,
+      "editor.parameterHints.enabled": false,
+      "editor.renderLineHighlight": "all",
+      "editor.minimap.enabled": false,
+      "editor.glyphMargin": false,
+      "explorer.compactFolders": false,
+      "window.commandCenter": false,
+      "workbench.layoutControl.enabled": false,
+      "symbols.hidesExplorerArrows": false,
+      "window.titleBarStyle": "custom",
+      "window.menuBarVisibility": "toggle",
+      "editor.scrollbar.vertical": "visible",
+      "workbench.statusBar.visible": false,
+      "explorer.sortOrder": "foldersNestsFiles",
+      "workbench.tree.indent": 12,
+      "workbench.activityBar.location": "top",
+      "git.blame.statusBarItem.enabled": true,
     // FILE NESTING
       "explorer.fileNesting.enabled": true,
       "explorer.fileNesting.expand": false,
       "explorer.fileNesting.patterns": {
-        "package.json": ".eslint*, eslint*, .prettier*, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*, biome.*, tsup*",
+        "package.json": ".eslint*, eslint*, .prettierrc, prettier*, tsconfig*, vite*, pnpm-*, bun.lockb, nest*, package-lock*, biome.*, tsup*",
         "tailwind.config.*": "tailwind.config*, postcss.config*",
+        ".gitignore": ".prettierignore",
         // ".env.local": ".env*",
         ".env": ".env*",
         "index.mjs": "index.d.mts"
       },
     //
-  //
-
-  // TO AUTOMATE VSCODE
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    // `typescript.preferences.preferTypeOnlyAutoImports` is optimized for frontend projects (e.g. React, Next) where type-only imports improve code clarity.
-    // However, in NestJS or other backend frameworks, it can cause dependecy injection issues.
-      "typescript.preferences.preferTypeOnlyAutoImports": true,
     //
-
-    // "typescript.suggest.autoImports": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "editor.tabCompletion": "on",
-    // "javascript.suggest.autoImports": true,
-    "files.eol": "\n",
-    "editor.tabSize": 2,
-    "editor.wordWrap": "on",
-    "editor.suggestSelection": "first",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit",
-      "source.fixAll.biome": "explicit",
-      // "source.fixAll.prettier": "explicit",
-      "source.organizeImports.biome": "explicit"
-      // "source.removeUnusedImports": "explicit",
-      // "source.addMissingImports": "always",
-    },
-    "eslint.validate": [
-      "javascript",
-      "javascriptreact",
-      "typescript",
-      "typescriptreact",
-      "json",
-      "jsonc",
-      "yaml"
-    ],
-    "emmet.includeLanguages": {
-      "javascript": "javascriptreact"
-    },
-    "emmet.syntaxProfiles": {
-      "javascript": "jsx"
-    },
-    // To disable default VSCode paths suggestions to use "Path Intellisense" extension
-    "typescript.suggest.paths": false,
-    "javascript.suggest.paths": false,
-
-    // To define line limits to code
-    "editor.rulers": [
-      80,
-      120
-    ],
-  //
-
-  // =========== EXTENSIONS SETUP CFG ===========
-    "extensions.ignoreRecommendations": true,
-    "livePreview.autoRefreshPreview": "On Changes to Saved Files",
-    // Colorize By YuTengjing
-    "colorize.enable_search_variables": true,
-    "colorize.hide_current_line_decorations": false,
-    "colorize.decoration_type": "background",
-    "colorize.languages": [
-      "javascript",
-      "typescript",
-      "tailwindcss",
-      "jsx",
-      "tsx",
-      "json"
-    ],
-    "colorize.include": [
-      "**/*.css",
-      "**/*.scss",
-      "**/*.sass",
-      "**/*.less",
-      "**/*.styl",
-      "**/*.ts",
-      "**/*.tsx",
-      "**/*.json"
-    ],
-    "colorize.exclude": [
-      "**/.git",
-      "**/.svn",
-      "**/.hg",
-      "**/CVS",
-      "**/.DS_Store",
-      "**/node_modules",
-      "**/bower_components",
-      "**/tmp",
-      "**/dist",
-      "**/tests"
-    ],
-    "colorize.colorized_colors": [
-      "BROWSERS_COLORS",
-      "HEXA",
-      "RGB",
-      "HSL"
-    ],
-  //
-
-  // Apc Customize UI++
-    // "apc.font.family": "Roboto Mono",
-    "apc.menubar.compact": false,
-    "apc.electron": {
-      "titleBarStyle": "hidden",
-      // "trafficLightPosition": {
-      //   "x": 11,
-      //   "y": 10
-      // },
-      "titleBarOverlay": {
-        "color": "#2f3241",
-        "symbolColor": "#74b1be",
-        "height": 60
-      }
-    },
-    "apc.stylesheet": {
-      ".title": "flex-direction: column; align-items: center",
-      ".part > .title > .title-label": "height: 0; padding-left:0px!important",
-      ".title-label > h2": "display: none",
-      ".title > .title-actions": " width: 100%; padding-left: 0!important",
-      ".title > .title-actions ul": "justify-content: space-between!important",
-      ".composite > .composite-bar-container > .composite-bar": "width:100%"
-      // ".composite > .composite-bar-container > .composite-bar ul": "justify-content:space-between",
-    },
-    "apc.listRow": {
-      "height": 24
-    },
-    "apc.activityBar": {
-      "size": 68,
-      "itemMargin": 6,
-      "itemSize": 52
-    },
-    "apc.sidebar.titlebar": {
-      "height": 36,
-      "fontSize": 13
-    },
-  //
-
-  // PRISMA STUDIO - Prisma By Prisma prisma.io
-    "prisma.showPrismaDataPlatformNotification": false,
-    "[prisma]": {
+    // TO AUTOMATE VSCODE
+      "js/ts.updateImportsOnFileMove.enabled": "always",
+      // `typescript.preferences.preferTypeOnlyAutoImports` is optimized for frontend projects (e.g. React, Next) where type-only imports improve code clarity.
+      // However, in NestJS or other backend frameworks, it can cause dependecy injection issues.
+      "js/ts.preferences.preferTypeOnlyAutoImports": true,
+      //
+      // "typescript.suggest.autoImports": true,
+      "editor.tabCompletion": "on",
+      // "javascript.suggest.autoImports": true,
+      "files.eol": "\n",
+      "editor.tabSize": 2,
+      "editor.wordWrap": "on",
+      "editor.suggestSelection": "first",
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.formatOnSave": true,
-      "editor.defaultFormatter": "Prisma.prisma"
-    },
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always",
+        "source.fixAll.biome": "explicit",
+        "source.fixAll.prettier": "always",
+        "source.organizeImports.biome": "explicit"
+        // "source.removeUnusedImports": "explicit",
+        // "source.addMissingImports": "always",
+      },
+      "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "json",
+        "jsonc",
+        "yaml"
+      ],
+      "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+      },
+      "emmet.syntaxProfiles": {
+        "javascript": "jsx"
+      },
+        "files.exclude": {
+          "node_modules": true
+        },
+      
+      // To disable default VSCode paths suggestions to use "Path Intellisense" extension
+      "js/ts.suggest.paths": false,
+      // "js.suggest.paths": false,
+      // To define line limits to code
+      "editor.rulers": [
+        80,
+        120
+      ],
+    //
+  //
+  // =========== EXTENSIONS SETUP CFG ===========
+  "extensions.ignoreRecommendations": true,
+  "livePreview.autoRefreshPreview": "On Changes to Saved Files",
+  // Colorize By YuTengjing
+  "colorize.enable_search_variables": true,
+  "colorize.hide_current_line_decorations": false,
+  "colorize.decoration_type": "background",
+  "colorize.languages": [
+    "javascript",
+    "typescript",
+    "tailwindcss",
+    "jsx",
+    "tsx",
+    "json"
+  ],
+  "colorize.include": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "**/*.styl",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.json"
+  ],
+  "colorize.exclude": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/node_modules",
+    "**/bower_components",
+    "**/tmp",
+    "**/dist",
+    "**/tests"
+  ],
+  "colorize.colorized_colors": [
+    "BROWSERS_COLORS",
+    "HEXA",
+    "RGB",
+    "HSL"
+  ],
+  //
+  // Apc Customize UI++
+  // "apc.font.family": "Roboto Mono",
+  "apc.menubar.compact": false,
+  "apc.electron": {
+    "titleBarStyle": "hidden",
+    // "trafficLightPosition": {
+    //   "x": 11,
+    //   "y": 10
+    // },
+    "titleBarOverlay": {
+      "color": "#2f3241",
+      "symbolColor": "#74b1be",
+      "height": 60
+    }
+  },
+  "apc.stylesheet": {
+    ".title": "flex-direction: column; align-items: center",
+    ".part > .title > .title-label": "height: 0; padding-left:0px!important",
+    ".title-label > h2": "display: none",
+    ".title > .title-actions": " width: 100%; padding-left: 0!important",
+    ".title > .title-actions ul": "justify-content: space-between!important",
+    ".composite > .composite-bar-container > .composite-bar": "width:100%"
+    // ".composite > .composite-bar-container > .composite-bar ul": "justify-content:space-between",
+  },
+  "apc.listRow": {
+    "height": 24
+  },
+  "apc.activityBar": {
+    "size": 68,
+    "itemMargin": 6,
+    "itemSize": 52
+  },
+  "apc.sidebar.titlebar": {
+    "height": 36,
+    "fontSize": 13
+  },
+  //
+  // PRISMA STUDIO - Prisma By Prisma prisma.io
+  "prisma.showPrismaDataPlatformNotification": false,
+  "[prisma]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
   //
   // MDX IntelliSense by unified unifiedjs.com
-    "mdx.server.enable": true,
+  "mdx.server.enable": true,
   //
   // Tailwind CSS IntelliSense By Tailwind Labs tailwindcss.com
-    "tailwindCSS.experimental.classRegex": [
-      [
-        "([\"'`][^\"'`]*.*?[\"'`])",
-        "[\"'`]([^\"'`]*).*?[\"'`]"
-      ],
-      [
-        "tv\\(([^)]*)\\)",
-        "\"'`.*?[\"'`]"
-      ],
-      "class:\\s*?[\"'`]([^\"'`]*).*?,"
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "([\"'`][^\"'`]*.*?[\"'`])",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
     ],
+    [
+      "tv\\(([^)]*)\\)",
+      "\"'`.*?[\"'`]"
+    ],
+    "class:\\s*?[\"'`]([^\"'`]*).*?,"
+  ],
   //
-
   // DISCORD RICH PRESENCE By leonardssh
     "vscord.status.details.text.editing": "🛹Vibration",
     "vscord.status.details.text.viewing": "🛹Vibration",
     "vscord.status.state.text.editing": "👩‍💻 Editing {file_name}{file_extension}:{current_line}:{current_column}",
     "editor.tokenColorCustomizations": {
+      "[*Light*]": {
+        "textMateRules": [
+          {
+            "scope": "ref.matchtext",
+            "settings": {
+              "foreground": "#000"
+            }
+          }
+        ]
+      },
+      "[*Dark*]": {
+        "textMateRules": [
+          {
+            "scope": "ref.matchtext",
+            "settings": {
+              "foreground": "#fff"
+            }
+          }
+        ]
+      },
       "textMateRules": []
     },
   //
@@ -253,6 +287,20 @@
     "security.allowedUNCHosts": [
       "wsl.localhost"
     ],
-    "remote.autoForwardPortsSource": "hybrid"
+    "remote.autoForwardPortsSource": "hybrid",
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "json.schemaDownload.trustedDomains": {
+      "https://developer.microsoft.com/json-schemas/": true,
+      "https://json-schema.org/": true,
+      "https://json.schemastore.org/": true,
+      "https://raw.githubusercontent.com": true,
+      "https://raw.githubusercontent.com/devcontainers/spec/": true,
+      "https://raw.githubusercontent.com/microsoft/vscode/": true,
+      "https://schemastore.azurewebsites.net/": true,
+      "https://www.schemastore.org/": true
+    },
+    "editor.semanticHighlighting.enabled": true,
   //
 }
