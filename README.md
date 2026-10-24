@@ -5,9 +5,8 @@
 [![Codepen Badge](https://img.shields.io/badge/CODEPEN-duhnunes-000000?style=flat-square&labelColor=000000&logo=codepen&logoColor=white&link=https://codepen.io/DuH-Nunes)](https://codepen.io/DuH-Nunes)
 [![Notion Badge](https://img.shields.io/badge/-duhnunes-000000?style=flat-square&labelColor=000000&logo=notion&logoColor=white&link=https://duhnunes.notion.site/1610bd79551d807a85cdc2e81cb79316?v=1610bd79551d806cafcd000ccbd3434a&pvs=4)](https://duhnunes.notion.site/1610bd79551d807a85cdc2e81cb79316?v=1610bd79551d806cafcd000ccbd3434a&pvs=4)  
 
-A guy with ideas.
+truck driver, front-end, bearded
 
-Currently:
-- Building [RDX](https://github.com/lexibase/rdx)
-- Building [SCS IntelliSense](https://github.com/duhnunes/scs-intellisense)
-- Planning 847 things
+- [RDX](https://github.com/lexibase/rdx)
+- [SCS IntelliSense](https://github.com/duhnunes/scs-intellisense)
+- thinking about 874 different things
