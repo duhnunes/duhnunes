@@ -8,5 +8,6 @@
 A guy with ideas.
 
 Currently:
+- Building [RDX](https://github.com/lexibase/rdx)
 - Building [SCS IntelliSense](https://github.com/duhnunes/scs-intellisense)
 - Planning 847 things
