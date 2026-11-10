@@ -13,8 +13,50 @@ import {
 } from "@/components/ui/command"
 import { projects, site, social } from "@/content/site"
 
+// The browser's smooth scroll starts fast and eases out. Going up to #top, the
+// fall plays backwards in that slow tail, which feels right. Going down, the
+// whole fall would rush by in the first ~200ms, so the dive to #projects starts
+// slowly instead and gives the fall about the same time as the way back out.
+const DIVE_MS = 1100
+const INTERRUPT = ["wheel", "touchstart", "keydown"] as const
+const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2)
+
+function dive(target: Element) {
+  const from = window.scrollY
+  const to = from + target.getBoundingClientRect().top
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    window.scrollTo({ top: to, behavior: "instant" })
+    return
+  }
+  const start = performance.now()
+  let frame = 0
+  let listening = false
+  // Any wheel, touch or key hands the scroll back to the visitor.
+  const stop = () => {
+    cancelAnimationFrame(frame)
+    for (const type of INTERRUPT) window.removeEventListener(type, stop)
+  }
+  const step = (now: number) => {
+    // Listen from the first frame on, so the Enter that picked "Projects" in the
+    // menu (still bubbling now) doesn't cancel the dive it started.
+    if (!listening) {
+      listening = true
+      for (const type of INTERRUPT) window.addEventListener(type, stop, { passive: true })
+    }
+    const p = Math.min(1, (now - start) / DIVE_MS)
+    window.scrollTo({ top: from + (to - from) * easeInOutCubic(p), behavior: "instant" })
+    if (p < 1) frame = requestAnimationFrame(step)
+    else stop()
+  }
+  frame = requestAnimationFrame(step)
+}
+
 function go(href: string) {
-  if (href.startsWith("#")) document.querySelector(href)?.scrollIntoView({ behavior: "smooth" })
+  if (href === "#projects") {
+    const target = document.querySelector(href)
+    if (target) dive(target)
+    history.pushState(null, "", href)
+  } else if (href.startsWith("#")) document.querySelector(href)?.scrollIntoView({ behavior: "smooth" })
   else if (href.startsWith("mailto:")) window.location.href = href
   else window.open(href, "_blank", "noopener,noreferrer")
 }
@@ -58,7 +100,14 @@ export function SiteNav() {
           {site.domain}
         </a>
         <nav className="flex items-center gap-5 text-zinc-400">
-          <a href="#projects" className="transition-colors hover:text-zinc-50">
+          <a
+            href="#projects"
+            onClick={(event) => {
+              event.preventDefault()
+              go("#projects")
+            }}
+            className="transition-colors hover:text-zinc-50"
+          >
             projects
           </a>
           <a
