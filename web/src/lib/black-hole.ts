@@ -176,11 +176,6 @@ export function createBlackHole(
     ctx.beginPath()
     ctx.arc(cx, cy, R, 0, Math.PI * 2)
     ctx.fill()
-    ctx.strokeStyle = `rgba(250,250,250,${0.5 * (1 - q)})`
-    ctx.lineWidth = 1
-    ctx.beginPath()
-    ctx.arc(cx, cy, R * 1.02, 0, Math.PI * 2)
-    ctx.stroke()
     ctx.globalCompositeOperation = "lighter"
     flush(2)
     ctx.globalCompositeOperation = "source-over"
