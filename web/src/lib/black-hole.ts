@@ -5,7 +5,14 @@
 type Particle = { k: number; a: number; len: number; b: number; v: number }
 type Star = { x: number; y: number; b: number }
 
-export type FrameState = { cx: number; cy: number; width: number; height: number; fall: number }
+export type FrameState = {
+  cx: number
+  cy: number
+  radius: number
+  width: number
+  height: number
+  fall: number
+}
 
 export type BlackHole = {
   setFall: (fall: number) => void
@@ -36,9 +43,18 @@ function spawn(p: Particle, fresh: boolean) {
   return p
 }
 
+type Anchor = (width: number, height: number) => { x: number; y: number }
+
+// Bottom-right corner on wide screens; upper right on phones, clear of the hero text.
+const cornerAnchor: Anchor = (width) => (width < 640 ? { x: 0.74, y: 0.3 } : { x: 0.84, y: 0.78 })
+
 export function createBlackHole(
   canvas: HTMLCanvasElement,
-  { reducedMotion, onFrame }: { reducedMotion: boolean; onFrame?: (state: FrameState) => void },
+  {
+    reducedMotion,
+    onFrame,
+    anchor = cornerAnchor,
+  }: { reducedMotion: boolean; onFrame?: (state: FrameState) => void; anchor?: Anchor },
 ): BlackHole {
   const ctx = canvas.getContext("2d")!
   let width = 0
@@ -71,20 +87,15 @@ export function createBlackHole(
     if (reducedMotion) draw(0)
   }
 
-  function anchor() {
-    // Bottom-right corner on wide screens; upper right on phones, clear of the hero text.
-    return width < 640 ? { x: 0.74, y: 0.3 } : { x: 0.84, y: 0.78 }
-  }
-
   function draw(dt: number) {
     const q = clamp(fall)
     const eq = ease(q)
-    const a = anchor()
+    const a = anchor(width, height)
     const r0 = Math.max(40, Math.min(110, Math.min(width, height) * 0.12))
     const cx = (a.x + (0.5 - a.x) * eq) * width
     const cy = (a.y + (0.5 - a.y) * eq) * height
     const R = r0 * (1 + q * q * 16)
-    onFrame?.({ cx, cy, width, height, fall: q })
+    onFrame?.({ cx, cy, radius: R, width, height, fall: q })
 
     if (q >= 1) {
       ctx.fillStyle = "#000"
