@@ -130,6 +130,11 @@
   html {
     @apply font-sans;
     scroll-behavior: smooth;
+    /* The page still scrolls; only the bar is hidden. */
+    scrollbar-width: none;
+  }
+  html::-webkit-scrollbar {
+    display: none;
   }
   @media (prefers-reduced-motion: reduce) {
     html {
