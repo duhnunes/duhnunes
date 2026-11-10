@@ -1,12 +1,22 @@
-# DuH Nunes
+<!--
+  you opened the source.
+  that's how it starts: a little closer than you meant to.
+-->
 
-[![Email Badge](https://img.shields.io/badge/-duhnunes.dev@gmail.com-000000?style=flat-square&labelColor=000000&logo=gmail&logoColor=white&link=mailto:duhnunes.dev@gmail.com)](mailto:duhnunes.dev@gmail.com)
-[![Linkedin Badge](https://img.shields.io/badge/LNKDIN-duhnunes-000000?style=flat-square&labelColor=000000&logo=linkedin&logoColor=white&link=https://linkedin.com/in/duhnunes/)](https://linkedin.com/in/duhnunes/)
-[![Codepen Badge](https://img.shields.io/badge/CODEPEN-duhnunes-000000?style=flat-square&labelColor=000000&logo=codepen&logoColor=white&link=https://codepen.io/DuH-Nunes)](https://codepen.io/DuH-Nunes)
-[![Notion Badge](https://img.shields.io/badge/-duhnunes-000000?style=flat-square&labelColor=000000&logo=notion&logoColor=white&link=https://duhnunes.notion.site/1610bd79551d807a85cdc2e81cb79316?v=1610bd79551d806cafcd000ccbd3434a&pvs=4)](https://duhnunes.notion.site/1610bd79551d807a85cdc2e81cb79316?v=1610bd79551d806cafcd000ccbd3434a&pvs=4)  
+<a href="https://duhnunes.vercel.app"><img src=".github/readme/void.svg" width="100%" alt="DuH Nunes: truck driver, front-end, bearded. A black hole seen from the side, its disk of light turning slowly." title="closer than it looks"></a>
 
-truck driver, front-end, bearded
+[rdx](https://github.com/lexibase/rdx) · [scs-intellisense](https://github.com/duhnunes/scs-intellisense)
 
-- [RDX](https://github.com/lexibase/rdx)
-- [SCS IntelliSense](https://github.com/duhnunes/scs-intellisense)
-- thinking about 874 different things
+<details>
+<summary><code>~/limbo</code></summary>
+<br>
+
+nothing here. just the void,\
+a few old experiments drifting: [codepen](https://codepen.io/DuH-Nunes)\
+and me, thinking about 874 different things.
+
+<!-- nothing comes back out. not even this. -->
+
+</details>
+
+<sub>[duhnunes.dev](https://duhnunes.vercel.app) · [linkedin](https://linkedin.com/in/duhnunes/) · [email](mailto:duhnunes.dev@gmail.com)</sub>
