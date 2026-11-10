@@ -14,9 +14,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 })
 
+// Vercel sets the production domain; it becomes duhnunes.dev once the domain is attached.
+const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+
 export const metadata: Metadata = {
+  metadataBase: new URL(productionUrl ? `https://${productionUrl}` : "http://localhost:3000"),
   title: site.name,
   description: site.description,
+  openGraph: {
+    type: "website",
+    siteName: site.domain,
+    title: site.name,
+    description: site.description,
+  },
+  twitter: { card: "summary_large_image" },
 }
 
 export const viewport: Viewport = {
