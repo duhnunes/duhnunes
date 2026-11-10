@@ -54,7 +54,14 @@ export function createBlackHole(
     reducedMotion,
     onFrame,
     anchor = cornerAnchor,
-  }: { reducedMotion: boolean; onFrame?: (state: FrameState) => void; anchor?: Anchor },
+    start = 0,
+  }: {
+    reducedMotion: boolean
+    onFrame?: (state: FrameState) => void
+    anchor?: Anchor
+    /** How far into the fall the hole already is at `fall = 0` (bigger, slightly closer). */
+    start?: number
+  },
 ): BlackHole {
   const ctx = canvas.getContext("2d")!
   let width = 0
@@ -88,14 +95,15 @@ export function createBlackHole(
   }
 
   function draw(dt: number) {
-    const q = clamp(fall)
+    const q = clamp(start + fall * (1 - start))
     const eq = ease(q)
     const a = anchor(width, height)
     const r0 = Math.max(40, Math.min(110, Math.min(width, height) * 0.12))
     const cx = (a.x + (0.5 - a.x) * eq) * width
     const cy = (a.y + (0.5 - a.y) * eq) * height
     const R = r0 * (1 + q * q * 16)
-    onFrame?.({ cx, cy, radius: R, width, height, fall: q })
+    // Consumers get the visitor's own progress, so `start` doesn't move what they drive.
+    onFrame?.({ cx, cy, radius: R, width, height, fall: clamp(fall) })
 
     if (q >= 1) {
       ctx.fillStyle = "#000"

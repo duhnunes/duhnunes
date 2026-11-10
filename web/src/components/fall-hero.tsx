@@ -8,7 +8,10 @@ import { createBlackHole, type FrameState } from "@/lib/black-hole"
 
 // The fall finishes before the section ends, leaving a stretch of pure black
 // (the limbo) before the projects scroll in.
-const FALL_END = 0.8
+const FALL_END = 0.77
+// The hole starts already 16% into the fall: bigger, and a shorter scroll to the
+// limbo. The section is shortened by the same stretch, so the fall keeps its pace.
+const FALL_START = 0.16
 
 export function FallHero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -32,7 +35,7 @@ export function FallHero() {
       hero.style.transform = `translate(${dx}px, ${dy}px) scale(${1 - e * 0.7}) rotate(${e * 25}deg)`
       hero.style.visibility = fall >= 0.72 ? "hidden" : "visible"
     }
-    const blackHole = createBlackHole(canvas, { reducedMotion, onFrame })
+    const blackHole = createBlackHole(canvas, { reducedMotion, onFrame, start: FALL_START })
 
     const update = () => {
       if (reducedMotion) return
@@ -63,7 +66,7 @@ export function FallHero() {
     <section
       ref={sectionRef}
       aria-label="Intro"
-      className={reducedMotion ? "relative h-svh" : "relative h-[260svh]"}
+      className={reducedMotion ? "relative h-svh" : "relative h-[240svh]"}
     >
       <div className="sticky top-0 h-svh overflow-hidden bg-[#0a0a0a]">
         <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 size-full" />
