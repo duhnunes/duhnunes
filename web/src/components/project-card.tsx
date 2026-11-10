@@ -107,16 +107,28 @@ export function ProjectCard({
     if (!card || !canvas || reducedMotion !== false) return
     let stop = () => {}
     let delay = 0
+    let armed = true
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting) return
-        observer.disconnect()
-        delay = window.setTimeout(() => {
-          setTraced("tracing")
-          stop = traceBorder(canvas, () => setTraced("shown"))
-        }, index * 250)
+        if (entry.intersectionRatio >= 0.4) {
+          if (!armed) return
+          armed = false
+          delay = window.setTimeout(() => {
+            setTraced("tracing")
+            stop = traceBorder(canvas, () => setTraced("shown"))
+          }, index * 250)
+        } else if (!armed && !entry.isIntersecting && entry.boundingClientRect.top > 0) {
+          // Left through the bottom: the visitor went back up towards the hole.
+          // Reset off screen, so the light traces the card again on the way down.
+          window.clearTimeout(delay)
+          stop()
+          stop = () => {}
+          canvas.getContext("2d")!.clearRect(0, 0, canvas.width, canvas.height)
+          armed = true
+          setTraced("hidden")
+        }
       },
-      { threshold: 0.4 },
+      { threshold: [0, 0.4] },
     )
     observer.observe(card)
     return () => {
