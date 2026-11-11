@@ -3,7 +3,7 @@
   that's how it starts: a little closer than you meant to.
 -->
 
-<a href="https://duhnunes.vercel.app"><img src=".github/readme/void.svg" width="100%" alt="DuH Nunes: truck driver, front-end, bearded. A black hole seen from the side, its disk of light turning slowly." title="closer than it looks"></a>
+<a href="https://duhnunes.dev"><img src=".github/readme/void.svg" width="100%" alt="DuH Nunes: truck driver, front-end, bearded. A black hole seen from the side, its disk of light turning slowly." title="closer than it looks"></a>
 
 [rdx](https://github.com/lexibase/rdx) · [scs-intellisense](https://github.com/duhnunes/scs-intellisense)
 
@@ -19,4 +19,4 @@ and me, thinking about 874 different things.
 
 </details>
 
-<sub>[duhnunes.dev](https://duhnunes.vercel.app) · [linkedin](https://linkedin.com/in/duhnunes/) · [email](mailto:duhnunes.dev@gmail.com)</sub>
+<sub>[duhnunes.dev](https://duhnunes.dev) · [linkedin](https://linkedin.com/in/duhnunes/) · [email](mailto:duhnunes.dev@gmail.com)</sub>
