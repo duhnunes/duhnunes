@@ -29,10 +29,10 @@ export const projects: Project[] = [
     name: "SCS IntelliSense",
     description:
       "Language support for SCS Software game files in VS Code, with diagnostics and formatting.",
-    href: "https://scs-intellisense.vercel.app/docs",
-    label: "scs-intellisense.vercel.app/docs",
+    href: "https://docs.duhnunes.dev/scs-intellisense/docs",
+    label: "docs.duhnunes.dev/scs-intellisense",
     links: [
-      { label: "SCS IntelliSense docs", href: "https://scs-intellisense.vercel.app/docs" },
+      { label: "SCS IntelliSense docs", href: "https://docs.duhnunes.dev/scs-intellisense/docs" },
       { label: "SCS IntelliSense on GitHub", href: "https://github.com/duhnunes/scs-intellisense" },
     ],
   },
