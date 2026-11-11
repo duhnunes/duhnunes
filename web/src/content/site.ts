@@ -22,7 +22,7 @@ export const projects: Project[] = [
     description:
       "A documentation framework built with Next.js, Tailwind CSS and shadcn/ui. Versioning, i18n and search out of the box.",
     href: "https://github.com/lexibase/rdx",
-    label: "github.com/lexibase/rdx",
+    label: "@lexibase/rdx",
     links: [{ label: "RDX on GitHub", href: "https://github.com/lexibase/rdx" }],
   },
   {
