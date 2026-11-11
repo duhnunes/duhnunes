@@ -11,6 +11,14 @@
     {
       "source": "/scs-intellisense/:path*",
       "destination": "https://scs-intellisense.vercel.app/scs-intellisense/:path*"
+    },
+    {
+      "source": "/sightline",
+      "destination": "https://sightline-releases.vercel.app/sightline"
+    },
+    {
+      "source": "/sightline/:path*",
+      "destination": "https://sightline-releases.vercel.app/sightline/:path*"
     }
   ]
 }

@@ -7,6 +7,7 @@ its RDX docs from its own repository.
 | Path | Project |
 | --- | --- |
 | `/scs-intellisense` | `scs-intellisense.vercel.app` |
+| `/sightline` | `sightline-releases.vercel.app` |
 
 `/` sends visitors to the projects on duhnunes.dev. Unknown paths get `404.html`.
 
