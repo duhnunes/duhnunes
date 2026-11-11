@@ -1,4 +1,5 @@
 // Public copy and links. Keep RDX first, and list only released projects.
+// Card labels are "@" mentions of the project (@lexibase/rdx, @sightline), not URLs.
 
 export type Project = {
   name: string
@@ -30,7 +31,7 @@ export const projects: Project[] = [
     description:
       "Language support for SCS Software game files in VS Code, with diagnostics and formatting.",
     href: "https://docs.duhnunes.dev/scs-intellisense/docs",
-    label: "docs.duhnunes.dev/scs-intellisense",
+    label: "@scs-intellisense",
     links: [
       { label: "SCS IntelliSense docs", href: "https://docs.duhnunes.dev/scs-intellisense/docs" },
       { label: "SCS IntelliSense on GitHub", href: "https://github.com/duhnunes/scs-intellisense" },
@@ -41,7 +42,7 @@ export const projects: Project[] = [
     description:
       "An in-game multi-monitor editor for American Truck Simulator and Euro Truck Simulator 2. Drag your views and every change applies live.",
     href: "https://docs.duhnunes.dev/sightline",
-    label: "docs.duhnunes.dev/sightline",
+    label: "@sightline",
     links: [
       { label: "Sightline docs", href: "https://docs.duhnunes.dev/sightline" },
       { label: "Download Sightline", href: "https://docs.duhnunes.dev/sightline/download" },
