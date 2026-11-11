@@ -88,6 +88,19 @@ export function SiteNav() {
     return () => window.removeEventListener("keydown", onKey)
   }, [])
 
+  // The browser's forward button returns to #projects with its own fast scroll.
+  // It fires popstate before it starts scrolling, so the dive takes over; Back
+  // keeps the native smooth scroll up, which already feels right.
+  useEffect(() => {
+    const onPopState = () => {
+      if (window.location.hash !== "#projects") return
+      const target = document.querySelector("#projects")
+      if (target) dive(target)
+    }
+    window.addEventListener("popstate", onPopState)
+    return () => window.removeEventListener("popstate", onPopState)
+  }, [])
+
   const run = (href: string) => {
     setOpen(false)
     go(href)
