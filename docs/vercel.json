@@ -1,8 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "trailingSlash": false,
   "redirects": [{ "source": "/", "destination": "https://duhnunes.dev/#projects", "permanent": false }],
   "rewrites": [
+    {
+      "source": "/scs-intellisense",
+      "destination": "https://scs-intellisense.vercel.app/scs-intellisense"
+    },
     {
       "source": "/scs-intellisense/:path*",
       "destination": "https://scs-intellisense.vercel.app/scs-intellisense/:path*"

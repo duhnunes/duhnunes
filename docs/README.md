@@ -14,15 +14,24 @@ its RDX docs from its own repository.
 
 1. In the tool's `rdx.config.ts`, set `basePath: '/<tool>'` and
    `metadata.metadataBase: 'https://docs.duhnunes.dev'`. Deploy it.
-2. Here, add a rewrite to `vercel.json`. Keep the prefix on both sides, so
+2. Here, add two rewrites to `vercel.json`. Keep the prefix on both sides, so
    pages, assets and API calls reach the same project:
 
    ```json
+   {
+     "source": "/<tool>",
+     "destination": "https://<tool-project>.vercel.app/<tool>"
+   },
    {
      "source": "/<tool>/:path*",
      "destination": "https://<tool-project>.vercel.app/<tool>/:path*"
    }
    ```
+
+   The bare `/<tool>` rule is not optional. Without it, the wildcard sends
+   `/<tool>/`, the tool's Next.js app strips the slash and redirects back
+   here, and the browser loops. `trailingSlash: false` makes the router
+   strip slashes the same way the tools do.
 
 3. Add `https://docs.duhnunes.dev/<tool>/sitemap.xml` to `sitemap.xml`, and
    the tool to the table above.
