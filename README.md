@@ -5,7 +5,7 @@
 
 <a href="https://duhnunes.dev"><img src=".github/readme/void.svg" width="100%" alt="DuH Nunes: truck driver, front-end, bearded. A black hole seen from the side, its disk of light turning slowly." title="closer than it looks"></a>
 
-[rdx](https://github.com/lexibase/rdx) · [scs-intellisense](https://github.com/duhnunes/scs-intellisense)
+[rdx](https://github.com/lexibase/rdx) · [scs-intellisense](https://github.com/duhnunes/scs-intellisense) · [sightline](https://docs.duhnunes.dev/sightline)
 
 <details>
 <summary><code>~/limbo</code></summary>

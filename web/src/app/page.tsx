@@ -19,7 +19,8 @@ export default function Home() {
                   key={project.name}
                   project={project}
                   index={i}
-                  className={i === 0 ? "md:min-h-80" : undefined}
+                  // RDX holds the whole left column; the other tools stack beside it.
+                  className={i === 0 ? "md:row-span-2 md:min-h-80" : undefined}
                 />
               ))}
             </div>
