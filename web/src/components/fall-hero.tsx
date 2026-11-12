@@ -2,12 +2,12 @@
 
 import { useEffect, useRef } from "react"
 
-import { projects, site } from "@/content/site"
+import { site, tools } from "@/content/site"
 import { useReducedMotion } from "@/hooks/use-reduced-motion"
 import { createBlackHole, type FrameState } from "@/lib/black-hole"
 
 // The fall finishes before the section ends, leaving a stretch of pure black
-// (the limbo) before the projects scroll in.
+// (the limbo) before the tools scroll in.
 const FALL_END = 0.77
 // The hole starts already 16% into the fall: bigger, and a shorter scroll to the
 // limbo. The section is shortened by the same stretch, so the fall keeps its pace.
@@ -79,11 +79,11 @@ export function FallHero() {
           </h1>
           <p className="mt-2 text-base text-zinc-400">{site.tagline}</p>
           <ul className="mt-4 flex gap-3 font-mono text-sm text-zinc-500">
-            {projects.map((project, i) => (
-              <li key={project.name} className="flex gap-3">
+            {tools.map((tool, i) => (
+              <li key={tool.name} className="flex gap-3">
                 {i > 0 && <span aria-hidden="true">·</span>}
-                <a href={project.href} className="transition-colors hover:text-zinc-200">
-                  {project.name.toLowerCase().replace(/ /g, "-")}
+                <a href={tool.href} className="transition-colors hover:text-zinc-200">
+                  {tool.name.toLowerCase().replace(/ /g, "-")}
                 </a>
               </li>
             ))}

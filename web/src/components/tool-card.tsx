@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 
-import type { Project } from "@/content/site"
+import type { Tool } from "@/content/site"
 import { useReducedMotion } from "@/hooks/use-reduced-motion"
 import { cn } from "@/lib/utils"
 
@@ -85,12 +85,12 @@ function traceBorder(canvas: HTMLCanvasElement, onDone: () => void) {
 
 type Stage = "hidden" | "tracing" | "shown"
 
-export function ProjectCard({
-  project,
+export function ToolCard({
+  tool,
   index,
   className,
 }: {
-  project: Project
+  tool: Tool
   index: number
   className?: string
 }) {
@@ -141,7 +141,7 @@ export function ProjectCard({
   return (
     <a
       ref={cardRef}
-      href={project.href}
+      href={tool.href}
       className={cn(
         "group relative flex min-h-56 flex-col rounded-xl border p-6 outline-none transition-[border-color,background-color] duration-700 focus-visible:ring-2 focus-visible:ring-zinc-400",
         stage === "shown"
@@ -162,12 +162,12 @@ export function ProjectCard({
           stage === "tracing" && "delay-700",
         )}
       >
-        <h3 className="text-xl font-medium text-zinc-50">{project.name}</h3>
+        <h3 className="text-xl font-medium text-zinc-50">{tool.name}</h3>
         <p className="mt-3 max-w-prose text-sm leading-relaxed text-zinc-400">
-          {project.description}
+          {tool.description}
         </p>
         <span className="mt-auto pt-6 font-mono text-xs text-zinc-500 transition-colors group-hover:text-zinc-300">
-          {project.label}
+          {tool.label}
         </span>
       </div>
     </a>

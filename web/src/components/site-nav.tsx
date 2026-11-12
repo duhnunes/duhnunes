@@ -11,11 +11,11 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
-import { projects, site, social } from "@/content/site"
+import { site, social, tools } from "@/content/site"
 
 // The browser's smooth scroll starts fast and eases out. Going up to #top, the
 // fall plays backwards in that slow tail, which feels right. Going down, the
-// whole fall would rush by in the first ~200ms, so the dive to #projects starts
+// whole fall would rush by in the first ~200ms, so the dive to #tools starts
 // slowly instead and gives the fall about the same time as the way back out.
 const DIVE_MS = 1100
 const INTERRUPT = ["wheel", "touchstart", "keydown"] as const
@@ -37,7 +37,7 @@ function dive(target: Element) {
     for (const type of INTERRUPT) window.removeEventListener(type, stop)
   }
   const step = (now: number) => {
-    // Listen from the first frame on, so the Enter that picked "Projects" in the
+    // Listen from the first frame on, so the Enter that picked "Limbo" in the
     // menu (still bubbling now) doesn't cancel the dive it started.
     if (!listening) {
       listening = true
@@ -52,7 +52,7 @@ function dive(target: Element) {
 }
 
 function go(href: string) {
-  if (href === "#projects") {
+  if (href === "#tools") {
     const target = document.querySelector(href)
     if (target) dive(target)
     history.pushState(null, "", href)
@@ -88,13 +88,13 @@ export function SiteNav() {
     return () => window.removeEventListener("keydown", onKey)
   }, [])
 
-  // The browser's forward button returns to #projects with its own fast scroll.
+  // The browser's forward button returns to #tools with its own fast scroll.
   // It fires popstate before it starts scrolling, so the dive takes over; Back
   // keeps the native smooth scroll up, which already feels right.
   useEffect(() => {
     const onPopState = () => {
-      if (window.location.hash !== "#projects") return
-      const target = document.querySelector("#projects")
+      if (window.location.hash !== "#tools") return
+      const target = document.querySelector("#tools")
       if (target) dive(target)
     }
     window.addEventListener("popstate", onPopState)
@@ -114,14 +114,14 @@ export function SiteNav() {
         </a>
         <nav className="flex items-center gap-5 text-zinc-400">
           <a
-            href="#projects"
+            href="#tools"
             onClick={(event) => {
               event.preventDefault()
-              go("#projects")
+              go("#tools")
             }}
             className="transition-colors hover:text-zinc-50"
           >
-            projects
+            limbo
           </a>
           <a
             href={social[0].href}
@@ -147,19 +147,19 @@ export function SiteNav() {
         open={open}
         onOpenChange={setOpen}
         title="Command menu"
-        description="Jump to a project or a link"
+        description="Jump to a tool or a link"
       >
         <Command>
           <CommandInput placeholder="Where to?" value={query} onValueChange={setQuery} />
           <CommandList>
             <CommandEmpty>Nothing here. Just the void.</CommandEmpty>
             <CommandGroup heading="Navigate">
-              <CommandItem onSelect={() => run("#projects")}>Projects</CommandItem>
+              <CommandItem onSelect={() => run("#tools")}>Limbo</CommandItem>
               <CommandItem onSelect={() => run("#top")}>Back to the surface</CommandItem>
             </CommandGroup>
-            <CommandGroup heading="Projects">
-              {projects.flatMap((project) =>
-                project.links.map((link) => (
+            <CommandGroup heading="Tools">
+              {tools.flatMap((tool) =>
+                tool.links.map((link) => (
                   <CommandItem key={link.href} onSelect={() => run(link.href)}>
                     {link.label}
                   </CommandItem>

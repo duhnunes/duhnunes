@@ -1,7 +1,7 @@
-// Public copy and links. Keep RDX first, and list only released projects.
-// Card labels are "@" mentions of the project (@lexibase/rdx, @sightline), not URLs.
+// Public copy and links. Keep RDX first, and list only released tools.
+// Card labels are "@" mentions of the tool (@lexibase/rdx, @sightline), not URLs.
 
-export type Project = {
+export type Tool = {
   name: string
   description: string
   href: string
@@ -17,7 +17,7 @@ export const site = {
     "DuH Nunes builds tools: RDX, a documentation framework, SCS IntelliSense and Sightline.",
 }
 
-export const projects: Project[] = [
+export const tools: Tool[] = [
   {
     name: "RDX",
     description:

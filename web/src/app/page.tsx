@@ -1,7 +1,7 @@
 import { FallHero } from "@/components/fall-hero"
-import { ProjectCard } from "@/components/project-card"
+import { ToolCard } from "@/components/tool-card"
 import { SiteNav } from "@/components/site-nav"
-import { projects, site, social } from "@/content/site"
+import { site, social, tools } from "@/content/site"
 
 export default function Home() {
   return (
@@ -9,15 +9,15 @@ export default function Home() {
       <SiteNav />
       <main id="top">
         <FallHero />
-        <section id="projects" aria-label="Projects" className="min-h-svh bg-black px-6 pt-24 pb-16 sm:px-12">
+        <section id="tools" aria-label="Tools" className="min-h-svh bg-black px-6 pt-24 pb-16 sm:px-12">
           <div className="mx-auto max-w-5xl">
             <p className="font-mono text-sm text-zinc-600">~/limbo</p>
-            <h2 className="sr-only">Projects</h2>
+            <h2 className="sr-only">Tools</h2>
             <div className="mt-8 grid gap-4 md:grid-cols-[1.25fr_1fr]">
-              {projects.map((project, i) => (
-                <ProjectCard
-                  key={project.name}
-                  project={project}
+              {tools.map((tool, i) => (
+                <ToolCard
+                  key={tool.name}
+                  tool={tool}
                   index={i}
                   // RDX holds the whole left column; the other tools stack beside it.
                   className={i === 0 ? "md:row-span-2 md:min-h-80" : undefined}

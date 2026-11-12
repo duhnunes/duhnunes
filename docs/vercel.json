@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "trailingSlash": false,
-  "redirects": [{ "source": "/", "destination": "https://duhnunes.dev/#projects", "permanent": false }],
+  "redirects": [{ "source": "/", "destination": "https://duhnunes.dev/#tools", "permanent": false }],
   "rewrites": [
     {
       "source": "/scs-intellisense",
