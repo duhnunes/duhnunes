@@ -14,8 +14,12 @@ export type FrameState = {
   fall: number
 }
 
+/** The streaks and stars, so another page can pick up the same sky where this one stopped. */
+export type Sky = { particles: Particle[]; stars: Star[] }
+
 export type BlackHole = {
   setFall: (fall: number) => void
+  sky: () => Sky
   setActive: (active: boolean) => void
   destroy: () => void
 }
@@ -43,10 +47,15 @@ function spawn(p: Particle, fresh: boolean) {
   return p
 }
 
-type Anchor = (width: number, height: number) => { x: number; y: number }
+export type Anchor = (width: number, height: number) => { x: number; y: number }
 
 // Bottom-right corner on wide screens; upper right on phones, clear of the hero text.
-const cornerAnchor: Anchor = (width) => (width < 640 ? { x: 0.74, y: 0.3 } : { x: 0.84, y: 0.78 })
+export const cornerAnchor: Anchor = (width) =>
+  width < 640 ? { x: 0.74, y: 0.3 } : { x: 0.84, y: 0.78 }
+
+// The home page opens already this far into the fall. The 404 travels to exactly
+// this state before handing over, so both pages agree on where the hole starts.
+export const HOME_FALL_START = 0.16
 
 export function createBlackHole(
   canvas: HTMLCanvasElement,
@@ -55,19 +64,22 @@ export function createBlackHole(
     onFrame,
     anchor = cornerAnchor,
     start = 0,
+    sky,
   }: {
     reducedMotion: boolean
     onFrame?: (state: FrameState) => void
     anchor?: Anchor
     /** How far into the fall the hole already is at `fall = 0` (bigger, slightly closer). */
     start?: number
+    /** Continue another hole's streaks and stars instead of drawing new ones. */
+    sky?: Sky | null
   },
 ): BlackHole {
   const ctx = canvas.getContext("2d")!
   let width = 0
   let height = 0
-  let particles: Particle[] = []
-  let stars: Star[] = []
+  let particles: Particle[] = sky?.particles ?? []
+  let stars: Star[] = sky?.stars ?? []
   let fall = 0
   let active = true
   let frame = 0
@@ -91,7 +103,9 @@ export function createBlackHole(
         y: Math.random(),
         b: 0.12 + Math.random() * 0.45,
       }))
-    if (reducedMotion) draw(0)
+    // Resizing clears the canvas; redraw now instead of a blank frame. This also
+    // draws the very first frame on creation, so a page swap never shows it empty.
+    draw(0)
   }
 
   function draw(dt: number) {
@@ -189,8 +203,12 @@ export function createBlackHole(
     ctx.globalCompositeOperation = "source-over"
   }
 
+  let first = true
   function loop(now: number) {
-    const dt = Math.min(3, (now - last) / 16.67)
+    // The first frame takes a plain step: time spent building the page before it
+    // is not motion, and counting it made the streaks jump right after a page swap.
+    const dt = first ? 1 : Math.min(3, (now - last) / 16.67)
+    first = false
     last = now
     draw(dt)
     frame = active ? requestAnimationFrame(loop) : 0
@@ -202,6 +220,7 @@ export function createBlackHole(
   if (!reducedMotion) frame = requestAnimationFrame(loop)
 
   return {
+    sky: () => ({ particles, stars }),
     setFall(value) {
       fall = value
       if (reducedMotion) draw(0)

@@ -112,7 +112,7 @@ export function SiteNav() {
         <a href="#top" className="font-mono text-zinc-50">
           {site.domain}
         </a>
-        <nav className="flex items-center gap-5 text-zinc-400">
+        <nav className="surface-in-late flex items-center gap-5 text-zinc-400">
           <a
             href="#tools"
             onClick={(event) => {

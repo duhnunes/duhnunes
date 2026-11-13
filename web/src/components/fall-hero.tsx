@@ -1,17 +1,17 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
 
 import { site, tools } from "@/content/site"
 import { useReducedMotion } from "@/hooks/use-reduced-motion"
-import { createBlackHole, type FrameState } from "@/lib/black-hole"
+import { createBlackHole, HOME_FALL_START, type FrameState } from "@/lib/black-hole"
+import { takeSky } from "@/lib/surfacing"
 
 // The fall finishes before the section ends, leaving a stretch of pure black
 // (the limbo) before the tools scroll in.
 const FALL_END = 0.77
 // The hole starts already 16% into the fall: bigger, and a shorter scroll to the
 // limbo. The section is shortened by the same stretch, so the fall keeps its pace.
-const FALL_START = 0.16
 
 export function FallHero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -19,7 +19,9 @@ export function FallHero() {
   const heroRef = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotion()
 
-  useEffect(() => {
+  // Layout effect: the hole must be drawn before the first paint, so arriving
+  // from the 404 hands over without an empty frame.
+  useLayoutEffect(() => {
     const section = sectionRef.current
     const canvas = canvasRef.current
     const hero = heroRef.current
@@ -35,7 +37,13 @@ export function FallHero() {
       hero.style.transform = `translate(${dx}px, ${dy}px) scale(${1 - e * 0.7}) rotate(${e * 25}deg)`
       hero.style.visibility = fall >= 0.72 ? "hidden" : "visible"
     }
-    const blackHole = createBlackHole(canvas, { reducedMotion, onFrame, start: FALL_START })
+    const blackHole = createBlackHole(canvas, {
+      reducedMotion,
+      onFrame,
+      start: HOME_FALL_START,
+      // Arriving from the 404: keep its streaks and stars, so the lights don't reshuffle.
+      sky: takeSky(),
+    })
 
     const update = () => {
       if (reducedMotion) return
@@ -74,20 +82,22 @@ export function FallHero() {
           ref={heroRef}
           className="absolute bottom-10 left-6 origin-bottom-left sm:bottom-14 sm:left-12"
         >
-          <h1 className="text-4xl font-medium tracking-tight text-zinc-50 sm:text-5xl">
-            {site.name}
-          </h1>
-          <p className="mt-2 text-base text-zinc-400">{site.tagline}</p>
-          <ul className="mt-4 flex gap-3 font-mono text-sm text-zinc-500">
-            {tools.map((tool, i) => (
-              <li key={tool.name} className="flex gap-3">
-                {i > 0 && <span aria-hidden="true">·</span>}
-                <a href={tool.href} className="transition-colors hover:text-zinc-200">
-                  {tool.name.toLowerCase().replace(/ /g, "-")}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="surface-in">
+            <h1 className="text-4xl font-medium tracking-tight text-zinc-50 sm:text-5xl">
+              {site.name}
+            </h1>
+            <p className="mt-2 text-base text-zinc-400">{site.tagline}</p>
+            <ul className="mt-4 flex gap-3 font-mono text-sm text-zinc-500">
+              {tools.map((tool, i) => (
+                <li key={tool.name} className="flex gap-3">
+                  {i > 0 && <span aria-hidden="true">·</span>}
+                  <a href={tool.href} className="transition-colors hover:text-zinc-200">
+                    {tool.name.toLowerCase().replace(/ /g, "-")}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

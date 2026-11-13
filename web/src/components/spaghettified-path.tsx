@@ -1,10 +1,18 @@
 "use client"
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react"
+import { useRouter } from "next/navigation"
+import { useEffect, useRef, useState, useSyncExternalStore, type MouseEvent } from "react"
 
 import { site } from "@/content/site"
 import { useReducedMotion } from "@/hooks/use-reduced-motion"
-import { createBlackHole } from "@/lib/black-hole"
+import {
+  cornerAnchor,
+  createBlackHole,
+  HOME_FALL_START,
+  type Anchor,
+  type BlackHole,
+} from "@/lib/black-hole"
+import { markSurfacing } from "@/lib/surfacing"
 import { cn } from "@/lib/utils"
 
 // Long enough to read the path before it starts falling.
@@ -12,9 +20,13 @@ const START = 1.5
 const STAGGER = 0.07
 const DURATION = 2.3
 const MAX_CHARS = 40
+// The hole's trip from the middle of the 404 to where the home page's hole opens.
+const SURFACE_MS = 1200
 
 const clamp = (v: number) => Math.max(0, Math.min(1, v))
 const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2)
+
+const voidAnchor: Anchor = (width) => ({ x: 0.5, y: width < 640 ? 0.3 : 0.36 })
 
 const noSubscribe = () => () => {}
 
@@ -22,14 +34,24 @@ const noSubscribe = () => () => {}
 export function SpaghettifiedPath() {
   const holeRef = useRef<HTMLCanvasElement>(null)
   const lettersRef = useRef<HTMLCanvasElement>(null)
+  const blackHoleRef = useRef<BlackHole | null>(null)
+  // 0 in the middle of the 404, 1 at the home page's opening spot.
+  const travel = useRef(0)
   const reducedMotion = useReducedMotion()
+  const router = useRouter()
   const [swallowed, setSwallowed] = useState(false)
+  const [surfacing, setSurfacing] = useState(false)
   const path = useSyncExternalStore(
     noSubscribe,
     () => decodeURIComponent(window.location.pathname),
     () => "",
   )
   const shown = path.length > MAX_CHARS ? `${path.slice(0, MAX_CHARS - 1)}…` : path
+
+  // Load the home page while the letters fall, so the hand-over has nothing to wait for.
+  useEffect(() => {
+    router.prefetch("/")
+  }, [router])
 
   useEffect(() => {
     const holeCanvas = holeRef.current
@@ -39,10 +61,20 @@ export function SpaghettifiedPath() {
     const hole = { cx: 0, cy: 0, radius: 0 }
     const blackHole = createBlackHole(holeCanvas, {
       reducedMotion,
-      anchor: (width) => ({ x: 0.5, y: width < 640 ? 0.3 : 0.36 }),
+      anchor: (width, height) => {
+        const from = voidAnchor(width, height)
+        const to = cornerAnchor(width, height)
+        const e = travel.current
+        return { x: from.x + (to.x - from.x) * e, y: from.y + (to.y - from.y) * e }
+      },
       onFrame: ({ cx, cy, radius }) => Object.assign(hole, { cx, cy, radius }),
     })
-    if (reducedMotion || !shown) return () => blackHole.destroy()
+    blackHoleRef.current = blackHole
+    const destroy = () => {
+      blackHoleRef.current = null
+      blackHole.destroy()
+    }
+    if (reducedMotion || !shown) return destroy
 
     const ctx = canvas.getContext("2d")!
     const font = getComputedStyle(document.documentElement).getPropertyValue("--font-geist-mono")
@@ -108,25 +140,63 @@ export function SpaghettifiedPath() {
 
     return () => {
       cancelAnimationFrame(frame)
-      blackHole.destroy()
+      destroy()
     }
   }, [reducedMotion, shown])
 
-  const done = swallowed || reducedMotion === true
+  // Carry the hole to the home page's opening spot (same anchor, same point of
+  // the fall), then switch pages without a reload: the home page's hole draws on
+  // its first frame where this one stopped, and the content fades in around it.
+  // Without motion, the plain link does a normal full load to the top.
+  const surface = (event: MouseEvent<HTMLAnchorElement>) => {
+    const blackHole = blackHoleRef.current
+    if (reducedMotion !== false || !blackHole || surfacing) return
+    event.preventDefault()
+    setSurfacing(true)
+    lettersRef.current?.getContext("2d")?.clearRect(0, 0, 1e5, 1e5)
+    const start = performance.now()
+    const step = (now: number) => {
+      const p = clamp((now - start) / SURFACE_MS)
+      const e = ease(p)
+      travel.current = e
+      blackHole.setFall(HOME_FALL_START * e)
+      if (p < 1) requestAnimationFrame(step)
+      else {
+        markSurfacing(blackHole.sky())
+        // scroll: false — Next would scroll the new page into view, and with the
+        // home page's several top-level parts it lands in the limbo. The 404 never
+        // scrolls, so the home page already opens at the top of the fall.
+        router.push("/", { scroll: false })
+      }
+    }
+    requestAnimationFrame(step)
+  }
 
-  // Plain links on purpose: a full load starts the home page at the top of the
-  // fall, while client navigation restored it scrolled down into the limbo.
+  const done = (swallowed || reducedMotion === true) && !surfacing
+
   return (
     <main className="relative h-svh overflow-hidden bg-[#0a0a0a]">
       <canvas ref={holeRef} aria-hidden="true" className="absolute inset-0 size-full" />
-      <canvas ref={lettersRef} aria-hidden="true" className="absolute inset-0 size-full" />
+      <canvas
+        ref={lettersRef}
+        aria-hidden="true"
+        className={cn(
+          "absolute inset-0 size-full transition-opacity duration-500",
+          surfacing && "opacity-0",
+        )}
+      />
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- full load on purpose */}
-      <a href="/" className="absolute top-4 left-6 font-mono text-sm text-zinc-50 sm:left-12">
+      <a
+        href="/"
+        onClick={surface}
+        className="absolute top-4 left-6 font-mono text-sm text-zinc-50 sm:left-12"
+      >
         {site.domain}
       </a>
       <div
         className={cn(
-          "absolute inset-x-6 bottom-[16svh] text-center transition-opacity duration-1000",
+          "absolute inset-x-6 bottom-[16svh] text-center transition-opacity",
+          surfacing ? "duration-500" : "duration-1000",
           done ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >
@@ -141,6 +211,7 @@ export function SpaghettifiedPath() {
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- full load on purpose */}
         <a
           href="/"
+          onClick={surface}
           className="mt-8 inline-block rounded-lg border border-zinc-700 px-4 py-2 text-sm text-zinc-200 transition-colors hover:border-zinc-500 hover:text-zinc-50"
         >
           Back to the surface

@@ -142,3 +142,25 @@
     }
   }
 }
+
+/* Back to the surface: arriving from the 404, the hole is already in place and
+   the content fades in around it (see src/lib/surfacing.ts). "backwards" only
+   holds the start while waiting, so the hero's own fade on scroll still works. */
+@keyframes surface-in {
+  from {
+    opacity: 0;
+  }
+}
+[data-surfacing] .surface-in {
+  animation: surface-in 1.2s ease-out 0.2s backwards;
+}
+[data-surfacing] .surface-in-late {
+  animation: surface-in 1.2s ease-out 0.6s backwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-surfacing] .surface-in,
+  [data-surfacing] .surface-in-late {
+    animation: none;
+  }
+}
+
