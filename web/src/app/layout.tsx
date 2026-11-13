@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 
@@ -38,7 +39,11 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className="bg-black">{children}</body>
+      <body className="bg-black">
+        {children}
+        {/* Cookie-free visit counts (Vercel Web Analytics); does nothing outside Vercel. */}
+        <Analytics />
+      </body>
     </html>
   )
 }
