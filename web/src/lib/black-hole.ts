@@ -19,6 +19,8 @@ export type Sky = { particles: Particle[]; stars: Star[] }
 
 export type BlackHole = {
   setFall: (fall: number) => void
+  /** Birth of the hole, 0..1: the horizon grows from a point and the disk gathers around it. */
+  setFormation: (formation: number) => void
   sky: () => Sky
   setActive: (active: boolean) => void
   destroy: () => void
@@ -65,6 +67,7 @@ export function createBlackHole(
     anchor = cornerAnchor,
     start = 0,
     sky,
+    formation: initialFormation = 1,
   }: {
     reducedMotion: boolean
     onFrame?: (state: FrameState) => void
@@ -73,6 +76,8 @@ export function createBlackHole(
     start?: number
     /** Continue another hole's streaks and stars instead of drawing new ones. */
     sky?: Sky | null
+    /** Start mid-birth (0 = not yet formed); see setFormation. */
+    formation?: number
   },
 ): BlackHole {
   const ctx = canvas.getContext("2d")!
@@ -81,6 +86,7 @@ export function createBlackHole(
   let particles: Particle[] = sky?.particles ?? []
   let stars: Star[] = sky?.stars ?? []
   let fall = 0
+  let formation = initialFormation
   let active = true
   let frame = 0
   let last = performance.now()
@@ -115,7 +121,10 @@ export function createBlackHole(
     const r0 = Math.max(40, Math.min(110, Math.min(width, height) * 0.12))
     const cx = (a.x + (0.5 - a.x) * eq) * width
     const cy = (a.y + (0.5 - a.y) * eq) * height
-    const R = r0 * (1 + q * q * 16)
+    // Being born: the horizon swells from a point, and the disk lights up a beat later.
+    const born = 1 - Math.pow(1 - clamp(formation), 3)
+    const disk = Math.pow(clamp((formation - 0.15) / 0.85), 1.5)
+    const R = r0 * (1 + q * q * 16) * born
     // Consumers get the visitor's own progress, so `start` doesn't move what they drive.
     onFrame?.({ cx, cy, radius: R, width, height, fall: clamp(fall) })
 
@@ -150,7 +159,8 @@ export function createBlackHole(
       path.moveTo(x0, y0)
       path.lineTo(x1, y1)
     }
-    const speed = 1 + q * 2
+    // A newborn disk spins fast and settles as it forms.
+    const speed = (1 + q * 2) * (1 + (1 - disk) * 2)
 
     for (const p of particles) {
       if (dt > 0) {
@@ -174,7 +184,7 @@ export function createBlackHole(
         if (i > 0) {
           const tail = Math.pow(1 - t, 1.3)
           const doppler = 1 + 0.55 * Math.cos(th)
-          const al = Math.min(1, p.b * fade * doppler * tail * (1.5 / p.k))
+          const al = Math.min(1, p.b * fade * doppler * tail * (1.5 / p.k)) * disk
           add(Math.sin(th) < 0 ? 0 : 2, al, px, py, x, y)
           add(1, al, lx, ly, qx, qy)
         }
@@ -194,10 +204,12 @@ export function createBlackHole(
     flush(0)
     flush(1)
     ctx.globalCompositeOperation = "source-over"
-    ctx.fillStyle = "#000"
-    ctx.beginPath()
-    ctx.arc(cx, cy, R, 0, Math.PI * 2)
-    ctx.fill()
+    if (R > 0) {
+      ctx.fillStyle = "#000"
+      ctx.beginPath()
+      ctx.arc(cx, cy, R, 0, Math.PI * 2)
+      ctx.fill()
+    }
     ctx.globalCompositeOperation = "lighter"
     flush(2)
     ctx.globalCompositeOperation = "source-over"
@@ -223,6 +235,10 @@ export function createBlackHole(
     sky: () => ({ particles, stars }),
     setFall(value) {
       fall = value
+      if (reducedMotion) draw(0)
+    },
+    setFormation(value) {
+      formation = value
       if (reducedMotion) draw(0)
     },
     setActive(value) {

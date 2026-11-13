@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 
-import { SpaghettifiedPath } from "@/components/spaghettified-path"
+import { CollapsingPath } from "@/components/collapsing-path"
 
 export const metadata: Metadata = {
   title: "Lost in the void · DuH Nunes",
 }
 
 export default function NotFound() {
-  return <SpaghettifiedPath />
+  return <CollapsingPath />
 }

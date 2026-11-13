@@ -15,23 +15,26 @@ import {
 import { markSurfacing } from "@/lib/surfacing"
 import { cn } from "@/lib/utils"
 
-// Long enough to read the path before it starts falling.
-const START = 1.5
-const STAGGER = 0.07
-const DURATION = 2.3
+// The birth, in seconds from the page opening.
+const READ = 1.2 // the typed path sits still, long enough to read
+const COMPRESS = 2.2 // its letters have crushed into one point of light
+const IMPLODE = 2.8 // the star swells, then caves in: the hole begins here
+const FORMED = 4.6 // horizon and disk fully formed
+const MESSAGE = 4.1 // the text shows while the disk settles
 const MAX_CHARS = 40
 // The hole's trip from the middle of the 404 to where the home page's hole opens.
 const SURFACE_MS = 1200
 
 const clamp = (v: number) => Math.max(0, Math.min(1, v))
 const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2)
+const easeIn = (t: number) => t * t * t
 
 const voidAnchor: Anchor = (width) => ({ x: 0.5, y: width < 640 ? 0.3 : 0.36 })
 
 const noSubscribe = () => () => {}
 
-/** The 404: the path the visitor typed is stretched and pulled into the hole. */
-export function SpaghettifiedPath() {
+/** The 404: the path the visitor typed collapses into a star, which implodes into the black hole. */
+export function CollapsingPath() {
   const holeRef = useRef<HTMLCanvasElement>(null)
   const lettersRef = useRef<HTMLCanvasElement>(null)
   const blackHoleRef = useRef<BlackHole | null>(null)
@@ -39,7 +42,7 @@ export function SpaghettifiedPath() {
   const travel = useRef(0)
   const reducedMotion = useReducedMotion()
   const router = useRouter()
-  const [swallowed, setSwallowed] = useState(false)
+  const [born, setBorn] = useState(false)
   const [surfacing, setSurfacing] = useState(false)
   const path = useSyncExternalStore(
     noSubscribe,
@@ -48,7 +51,7 @@ export function SpaghettifiedPath() {
   )
   const shown = path.length > MAX_CHARS ? `${path.slice(0, MAX_CHARS - 1)}…` : path
 
-  // Load the home page while the letters fall, so the hand-over has nothing to wait for.
+  // Load the home page during the birth, so the hand-over has nothing to wait for.
   useEffect(() => {
     router.prefetch("/")
   }, [router])
@@ -58,28 +61,39 @@ export function SpaghettifiedPath() {
     const canvas = lettersRef.current
     if (!holeCanvas || !canvas || reducedMotion === null) return
 
-    const hole = { cx: 0, cy: 0, radius: 0 }
+    const skip = reducedMotion || !shown
+    const hole = { cx: 0, cy: 0 }
     const blackHole = createBlackHole(holeCanvas, {
       reducedMotion,
+      formation: skip ? 1 : 0,
       anchor: (width, height) => {
         const from = voidAnchor(width, height)
         const to = cornerAnchor(width, height)
         const e = travel.current
         return { x: from.x + (to.x - from.x) * e, y: from.y + (to.y - from.y) * e }
       },
-      onFrame: ({ cx, cy, radius }) => Object.assign(hole, { cx, cy, radius }),
+      onFrame: ({ cx, cy }) => Object.assign(hole, { cx, cy }),
     })
     blackHoleRef.current = blackHole
     const destroy = () => {
       blackHoleRef.current = null
       blackHole.destroy()
     }
-    if (reducedMotion || !shown) return destroy
+    if (skip) {
+      // Without the birth there is nothing to wait for. Deferred: an effect
+      // shouldn't set state while it runs.
+      const shownNow = window.setTimeout(() => setBorn(true))
+      return () => {
+        window.clearTimeout(shownNow)
+        destroy()
+      }
+    }
 
     const ctx = canvas.getContext("2d")!
     const font = getComputedStyle(document.documentElement).getPropertyValue("--font-geist-mono")
     const start = performance.now()
     let frame = 0
+    let told = false
 
     const step = (now: number) => {
       const dpr = Math.min(2, window.devicePixelRatio || 1)
@@ -91,50 +105,78 @@ export function SpaghettifiedPath() {
       }
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       ctx.clearRect(0, 0, width, height)
-      const size = Math.min(24, (width - 48) / (shown.length * 0.62))
-      ctx.font = `${size}px ${font}, monospace`
-      ctx.textAlign = "center"
-      ctx.textBaseline = "middle"
-
       const t = (now - start) / 1000
-      const { cx, cy, radius } = hole
-      const total = ctx.measureText(shown).width
-      let x = width / 2 - total / 2
-      let alive = 0
-      // Long paths fall faster, so every 404 takes about the same time.
-      const stagger = Math.min(STAGGER, 1.4 / shown.length)
-      for (let i = 0; i < shown.length; i++) {
-        const ch = shown[i]
-        const w = ctx.measureText(ch).width
-        const x0 = x + w / 2
-        const y0 = height * 0.66
-        x += w
-        const p = clamp((t - START - i * stagger) / DURATION)
-        if (p < 1) alive++
-        const e = ease(p)
-        // Spiral in while stretching along the fall and thinning across it.
-        const r0 = Math.hypot(x0 - cx, y0 - cy)
-        const a0 = Math.atan2(y0 - cy, x0 - cx)
-        const r = r0 * (1 - e) + radius * 0.85 * e
-        const a = a0 + p * p * 2.4
-        const alpha = 1 - clamp((p - 0.72) / 0.28)
-        if (alpha <= 0) continue
-        ctx.save()
-        ctx.translate(cx + Math.cos(a) * r, cy + Math.sin(a) * r * (1 - 0.55 * e))
-        // Upright at rest; while falling, the stretched axis turns to point at the hole.
-        const radial = Math.atan2(Math.sin(a - Math.PI / 2), Math.cos(a - Math.PI / 2))
-        ctx.rotate(radial * e)
-        ctx.scale(1 - 0.6 * e, 1 + 3.2 * e * e)
-        ctx.fillStyle = `rgba(250,250,250,${alpha})`
-        ctx.fillText(ch, 0, 0)
-        ctx.restore()
+      const { cx, cy } = hole
+      const unit = Math.min(width, height)
+
+      if (t < COMPRESS) {
+        // The typed path, then its letters crushed together into one point.
+        const c = easeIn(clamp((t - READ) / (COMPRESS - READ)))
+        const size = Math.min(28, (width - 48) / (shown.length * 0.62))
+        ctx.font = `${size}px ${font}, monospace`
+        ctx.textAlign = "center"
+        ctx.textBaseline = "middle"
+        ctx.fillStyle = "#fafafa"
+        ctx.shadowColor = "rgba(250,250,250,0.9)"
+        ctx.shadowBlur = 2 + c * 22
+        const total = ctx.measureText(shown).width
+        let x = cx - total / 2
+        for (const ch of shown) {
+          const w = ctx.measureText(ch).width
+          const x0 = x + w / 2
+          x += w
+          const scale = 1 - 0.85 * c
+          ctx.save()
+          ctx.translate(cx + (x0 - cx) * (1 - c), cy)
+          ctx.scale(scale, scale)
+          ctx.fillText(ch, 0, 0)
+          ctx.restore()
+        }
+        ctx.shadowBlur = 0
+      } else if (t < IMPLODE) {
+        // A star: it swells and brightens, then caves in on itself.
+        const p = (t - COMPRESS) / (IMPLODE - COMPRESS)
+        const swell = Math.sin(clamp(p / 0.7) * Math.PI * 0.5)
+        const cave = easeIn(clamp((p - 0.7) / 0.3))
+        const r = (5 + swell * 5) * (1 - cave)
+        if (r > 0.2) {
+          const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, r * 5)
+          glow.addColorStop(0, "rgba(255,255,255,1)")
+          glow.addColorStop(0.2, "rgba(244,244,245,0.6)")
+          glow.addColorStop(1, "rgba(244,244,245,0)")
+          ctx.fillStyle = glow
+          ctx.beginPath()
+          ctx.arc(cx, cy, r * 5, 0, Math.PI * 2)
+          ctx.fill()
+        }
+      } else {
+        // The implosion's light rushing out, kept soft: no hard flash on a dark page.
+        const p = clamp((t - IMPLODE) / 0.9)
+        if (p < 1) {
+          const radius = unit * 0.45 * (1 - Math.pow(1 - p, 3))
+          ctx.strokeStyle = `rgba(244,244,245,${0.4 * (1 - p)})`
+          ctx.lineWidth = 1 + 2 * (1 - p)
+          ctx.beginPath()
+          ctx.arc(cx, cy, radius, 0, Math.PI * 2)
+          ctx.stroke()
+          const haze = ctx.createRadialGradient(cx, cy, 0, cx, cy, unit * 0.3)
+          haze.addColorStop(0, `rgba(244,244,245,${0.14 * (1 - p)})`)
+          haze.addColorStop(1, "rgba(244,244,245,0)")
+          ctx.fillStyle = haze
+          ctx.fillRect(0, 0, width, height)
+        }
+        blackHole.setFormation(clamp((t - IMPLODE) / (FORMED - IMPLODE)))
       }
-      if (t > START && alive === 0) {
+
+      if (!told && t >= MESSAGE) {
+        told = true
+        setBorn(true)
+      }
+      if (t < FORMED) frame = requestAnimationFrame(step)
+      else {
         ctx.clearRect(0, 0, width, height)
-        setSwallowed(true)
-        return
+        blackHole.setFormation(1)
       }
-      frame = requestAnimationFrame(step)
     }
     frame = requestAnimationFrame(step)
 
@@ -150,7 +192,8 @@ export function SpaghettifiedPath() {
   // Without motion, the plain link does a normal full load to the top.
   const surface = (event: MouseEvent<HTMLAnchorElement>) => {
     const blackHole = blackHoleRef.current
-    if (reducedMotion !== false || !blackHole || surfacing) return
+    // Mid-birth, the plain link just loads the home page.
+    if (reducedMotion !== false || !blackHole || surfacing || !born) return
     event.preventDefault()
     setSurfacing(true)
     lettersRef.current?.getContext("2d")?.clearRect(0, 0, 1e5, 1e5)
@@ -172,7 +215,7 @@ export function SpaghettifiedPath() {
     requestAnimationFrame(step)
   }
 
-  const done = (swallowed || reducedMotion === true) && !surfacing
+  const done = born && !surfacing
 
   return (
     <main className="relative h-svh overflow-hidden bg-[#0a0a0a]">
